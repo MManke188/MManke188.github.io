@@ -1,0 +1,29 @@
+#header {
+  border: 3px solid red;
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+#cv {
+  border: 3px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+#preview {
+  border: 3px solid blue;
+  margin: 5px;
+  padding: 5px;
+}
+
+#projects {
+  border: 3px solid brown;
+  margin: 5px;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+
+}
