@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+  <title>US Educational Attainment</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <main>
+    <h1 id='title'>United States Educational Attainment</h1>
+
+    <p id='description'>Percentage of adults with a bachelors degree older than 25
+    <p>
+
+  </main>
+
+  <div id='body'>
+    <svg id='legend'>
+
+      <rect x='10' y='10' width='40' height='40' fill='white'></rect>
+      <text x='60' y='35' fill='black'>Less than 15%</text>
+
+      <rect x='10' y='60' width='40' height='40' fill='lightblue'></rect>
+      <text x='60' y='85' fill='black'>Less than 35%</text>
+
+      <rect x='250' y='10' width='40' height='40' fill='blue'></rect>
+      <text x='300' y='35' fill='black'>Less than 50%</text>
+
+      <rect x='250' y='60' width='40' height='40' fill='darkblue'></rect>
+      <text x='300' y='85' fill='black'>50% or more</text>
+
+    </svg>
+
+    <div id='tooltip'>
+
+    </div>
+
+    <svg id='svg'>
+    </svg>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/6.3.1/d3.min.js"></script>
+  <script src="index.js"></script>
+</body>

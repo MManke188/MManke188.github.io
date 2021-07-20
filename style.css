@@ -1,29 +1,153 @@
-#header {
-  border: 3px solid red;
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
+body {
+  background-color:rgb(41, 41, 41);
+  ;
+  background-image: url("Images/red\ grey\ corners.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #cv {
   border: 3px solid black;
   margin: 5px;
   padding: 5px;
+  display: grid;
+  position: fixed;
+  right: 30px;
+  top: 15px;
+  background-color: darkgray;
+  padding: 10px;
+  z-index: 5;
 }
 
 #preview {
-  border: 3px solid blue;
-  margin: 5px;
+  position: relative;
+  border: 3px solid rgb(0, 0, 200);
+  background-color: rgba(169, 169, 169, 0.6);
+  margin: 20px 150px 20px 150px;
+  height: 600px;
   padding: 5px;
+}
+
+#example {
+  display: flex;
+  justify-content: center;
+}
+
+#example img {
+  position: absolute;
+  top: 5px;
+  margin: auto;
+  height: 600px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.smooth {
+  opacity: 0;
+}
+
+#example img:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  width: 130px;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+#arrow1 {
+  transform: rotate(180deg);
+  position: absolute;
+  top: 40%;
+  left: 10px;
+}
+
+#arrow2 {
+  position: absolute;
+  top: 40%;
+  right: 10px;
+}
+
+.container {
+  position: relative;
+  margin-top: 20px;
+}
+
+#title {
+  justify-content: center;
 }
 
 #projects {
   border: 3px solid brown;
-  margin: 5px;
-  padding: 5px;
+  background-color: rgba(111, 111, 111, 0.6);
+  margin: 35px;
+  padding: 10px;
+  text-align: center;
 }
 
-.container {
-  display: flex;
+#list {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+}
 
+.project {
+  border: 6px ridge white;
+  box-shadow: 0 0 0 1pt red;
+  border-radius: 10px;
+  height: 300px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+  background-size: cover;
+}
+
+.project:hover {
+  cursor: pointer;
+  border: 6px ridge white;
+  box-shadow: 0 0 0 2pt red;
+  height: 315px;
+  width: 420px;
+  margin-top: -10px;
+  margin-bottom: 0px;
+}
+
+.project img {
+  height: 100%;
+  width: fit-content;
+  width: 100%;
+  filter: saturate(1) contrast(0.8);
+  border-radius: 5px;
+}
+
+.project img:hover {
+  cursor: pointer;
+  filter: saturate(1.5);
+  border-radius: 5px;
+}
+
+
+footer {
+  border: 1px solid lightgray;
+}
+
+form {
+  display: flex;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#download-button {
+  width: 180px;
+  height: 30px;
+}
+
+#download-button:hover {
+  cursor: pointer;
 }

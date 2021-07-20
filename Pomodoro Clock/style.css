@@ -1,0 +1,76 @@
+#pomodoro {
+  display: flex;
+  justify-content: center;
+  background: rgb(255,165,100,1);
+  color: black;
+  border: solid black 3px;
+  border-radius: 3px;
+  margin: auto;
+  width: 260px;
+}
+
+#time-left {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+}
+
+#name {
+  display: flex;
+  justify-content: center;
+  color: white;
+  border: solid white 1px;
+  border-radius: 5px;
+  background: green;
+  padding: 2px;
+}
+
+#beep {
+  visibility: hidden;
+}
+
+.increment-button {
+  background: green;
+  color: white;
+  font-size: 15px;
+}
+
+.decrement-button {
+  background: white;
+  color: green;
+  font-size: 15px;
+}
+
+.center {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+#time-left {
+  display: flex;
+  justify-content: center;
+  color: black;
+}
+
+#start_stop {
+  position: relative;
+  top: -10px;
+  background: white;
+  color: black;
+  font-size: 20px;
+}
+
+#reset {
+  position: relative;
+  top: -10px;
+  font-size: 20px;
+  background: black;
+  color: white;
+}
+
+.body {
+  background: rgb(255,102,0, 0.8);
+}
+

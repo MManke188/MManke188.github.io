@@ -1,45 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>M.Manke</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/style.css">
-  </head>
 
-  <body>
-    <div id='header'>
-      <h1>Michael Manke</h1>
-      <p>This is the go-to website for anything that I have worked on.</p>
+<head>
+  <title>M.Manke</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div id='header'>
+    <h1 id="title">Michael Manke</h1>
+    <p>This is the go-to website for anything that I have worked on.</p>
+  </div>
+
+  <div class="container">
+    <div id='cv'>
+      My CV: <br>
+      <form method="get" target="_blank" action="Files/CV Michael Manke (english).pdf">
+        <button type="submit" id="download-button">Download</button>
+      </form>
+      <br>
+      Click to view:
+      <img src="Images/cv-icon.png">
     </div>
-  
-    <div class="container">
-      <div id='cv'>
-        My CV is here
-      </div>
-    
-      <div id='preview'>
-        You can preview projects here
-      </div>
-    </div>
-    
-  
-    <div id='projects'>
-      <p>What follows is a list of my personal projects:</p>
-  
-      <div id='messageboard'>messageboard</div>
-      <div id='calculator'>calculator</div>
-      <div id='choropleth-map'>choropleth-map</div>
-      <div id='sudoku-solver'>sudoku-solver</div>
-      <div id='chatroom'>chatroom</div>
-      <div id='brick-destroyer'>brick-destroyer</div>
-      <div id='pomodoro'>pomodoro</div>
-      <div id='library'>library</div>
-      <div id='finance-monitor'>finance-monitor</div>
-      <div id='arithmetic-arranger'>arrithmetic-arranger</div>
-      <div id='issue-tracker'>issue-tracker</div>
+  </div>
+
+  <div id='preview' class="blur">
+    <div id="example">
+      <img src="Images/covid.png" id="line-chart" onclick="projectRedirect(this)">
     </div>
 
-  </body>
+    <img class='arrow' id="arrow1" src="Images/arrow-icon.png" onclick="previous()">
+    <img class='arrow' id="arrow2" src="Images/arrow-icon.png" onclick="next()">
+  </div>
+
+
+  <div id='projects'>
+    <p>What follows is a list of all my larger personal projects:</p>
+    <div id="list">
+      <div class="project"><img src="Images/messageboard.png" id='messageboard'></div>
+      <div class="project"><img src='Images/arrow-icon.png' id='calculator'></div>
+      <div class="project"><img src='Images/choropleth.png' id='choropleth-map'></div>
+      <div class="project"><img src='Images/covid.png' id='line-chart'></div>
+      <div class="project"><img src='Images/sudoku-solver.png' id='sudoku-solver'></div>
+      <div class="project"><img src='Images/arrow-icon.png' id='chatroom'></div>
+      <div class="project"><img src='Images/brick-destroyer.png' id='brick-destroyer'></div>
+      <div class="project"><img src='Images/pomodoro-clock.png' id='pomodoro'></div>
+      <div class="project"><img src='Images/personal-library.png' id='library'></div>
+      <div class="project"><img src='Images/stockprice-checker.png' id='stockprice-checker'></div>
+      <div class="project"><img src='Images/arrow-icon.png' id='arithmetic-arranger'></div>
+      <div class="project"><img src='Images/arrow-icon.png' id='issue-tracker'></div>
+    </div>
+
+  </div>
+
+  <footer>
+
+  </footer>
+
+  <script src="./index.js"></script>
+</body>
+
 </html>
