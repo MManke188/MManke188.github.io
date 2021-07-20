@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 body {
   background-color:rgb(41, 41, 41);
   ;
@@ -6,20 +5,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-=======
-#header {
-  border: 3px solid red;
-  margin: 5px;
-  padding: 5px;
-  text-align: center;
->>>>>>> 7bf8cb4c3fc42d9f5497fe52b0d4394f55547480
 }
 
 #cv {
   border: 3px solid black;
   margin: 5px;
   padding: 5px;
-<<<<<<< HEAD
   display: grid;
   position: fixed;
   right: 30px;
@@ -159,23 +150,4 @@ form {
 
 #download-button:hover {
   cursor: pointer;
-=======
-}
-
-#preview {
-  border: 3px solid blue;
-  margin: 5px;
-  padding: 5px;
-}
-
-#projects {
-  border: 3px solid brown;
-  margin: 5px;
-  padding: 5px;
-}
-
-.container {
-  display: flex;
-
->>>>>>> 7bf8cb4c3fc42d9f5497fe52b0d4394f55547480
 }
