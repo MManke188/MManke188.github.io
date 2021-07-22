@@ -311,5 +311,6 @@ function numberWithCommas(x) {
 load()
 
 document.getElementById('home-button').addEventListener('click', () => {
+  console.log('works')
   location.href = "https://mmanke188.github.io/index.html"
 })
