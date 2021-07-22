@@ -309,3 +309,7 @@ function numberWithCommas(x) {
 }
 
 load()
+
+document.getElementById('home-button').addEventListener('click', () => {
+  location.href = "https://mmanke188.github.io/index.html"
+})
