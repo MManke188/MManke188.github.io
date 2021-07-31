@@ -7,6 +7,18 @@ body {
   background-attachment: fixed;
 }
 
+header {
+  color: whitesmoke;
+  text-align: center;
+  -webkit-text-stroke: 0.4px rgb(0, 0, 0);
+  transition: opacity 3s ease-in 1s;
+  opacity: 0;
+}
+
+header p {
+  -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+}
+
 #cv {
   border: 3px solid black;
   margin: 5px;
@@ -18,6 +30,18 @@ body {
   background-color: darkgray;
   padding: 10px;
   z-index: 5;
+  overflow: hidden;
+}
+
+#toggle {
+  width: 20px;
+  position: absolute;
+  right: 0px;
+  margin: 10px;
+}
+
+#toggle:hover {
+  cursor: pointer;
 }
 
 #preview {
@@ -25,24 +49,35 @@ body {
   border: 3px solid rgb(0, 0, 200);
   background-color: rgba(169, 169, 169, 0.6);
   margin: 20px 150px 20px 150px;
-  height: 600px;
+  height: 680px;
   padding: 5px;
+  width: 1200px;
+  margin: auto;
 }
 
 #example {
   display: flex;
   justify-content: center;
+  align-self: center;
+  width: 1412px;
+  height: 706px;
+  -webkit-transform: scale(.25);
+  -ms-transform: scale(.85);
+  transform: scale(.85);
+  -webkit-transform-origin: 0 0; 
+  -ms-transform-origin: 0 0; 
+  transform-origin: 0 0;
 }
 
-#example img {
-  position: absolute;
-  top: 5px;
+#example iframe {
+  width: 1050px;
+  height: 750px;
   margin: auto;
-  height: 600px;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
+  border-radius: 10px;
 }
 
 .smooth {
@@ -55,6 +90,8 @@ body {
 
 .arrow {
   width: 130px;
+  position: absolute;
+  top: 260px;
 }
 
 .arrow:hover {
@@ -63,14 +100,10 @@ body {
 
 #arrow1 {
   transform: rotate(180deg);
-  position: absolute;
-  top: 40%;
   left: 10px;
 }
 
 #arrow2 {
-  position: absolute;
-  top: 40%;
   right: 10px;
 }
 
@@ -132,7 +165,6 @@ body {
   border-radius: 5px;
 }
 
-
 footer {
   border: 1px solid lightgray;
 }
@@ -149,5 +181,13 @@ form {
 }
 
 #download-button:hover {
+  cursor: pointer;
+}
+
+#redirect {
+  margin-left: 500px;
+}
+
+#redirect:hover {
   cursor: pointer;
 }

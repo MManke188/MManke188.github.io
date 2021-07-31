@@ -6,102 +6,143 @@ for (let project of projects) {
 
 function projectRedirect(event) {
   let project
+  console.log(event)
   if (event.srcElement !== undefined) {
     project = event.srcElement.id
   } else {
     project = event.id
   }
-  console.log(event)
   switch (project) {
     case 'brick-destroyer':
-      location.href = 'BrickDestroyer/index.html'
+      window.open('BrickDestroyer/index.html', '_blank')
       break;
     case 'calculator':
-      location.href = 'Calculator/public/index.html'
+      window.open('Calculator/public/index.html', '_blank')
       break;
     case 'chatroom':
-      location.href = 'Chatroom/views/pug/index.pug'
+      window.open('Chatroom/views/pug/index.pug', '_blank')
       break;
     case 'line-chart':
-      location.href = 'Data Visualizations/Covid Visualization/covid3.html'
+      window.open('Data Visualizations/Covid Visualization/covid3.html', '_blank')
       break;
     case 'choropleth-map':
-      location.href = 'Data Visualizations/American Education/index.html'
+      window.open('Data Visualizations/American Education/index.html', '_blank')
       break;
     case 'messageboard':
-      location.href = 'Messageboard/views/index.html'
+      window.open('Messageboard/views/index.html', '_blank')
       break;
     case 'library':
-      location.href = 'Personal Library/views/index.html'
+      window.open('Personal Library/views/index.html', '_blank')
       break;
     case 'pomodoro':
-      location.href = 'Pomodoro Clock/index.html'
+      window.open('Pomodoro Clock/index.html', '_blank')
       break;
     case 'stockprice-checker':
-      location.href = 'Stock Price Checker/views/index.html'
+      window.open('Stock Price Checker/views/index.html', '_blank')
       break;
     case 'sudoku-solver':
-      location.href = 'Sudoku Solver/views/index.html'
+      window.open('Sudoku Solver/views/index.html', '_blank')
       break;
     case 'game-ratings':
-      location.href = 'Data Visualizations/Game Ratings/Q5/choropleth.html'
-      break;
-    case 'brick-destroyer.png':
-      location.href = 'BrickDestroyer/index.html'
+      window.open('Data Visualizations/Game Ratings/Q5/choropleth.html', '_blank')
       break;
   }
 }
 
 document.addEventListener('keydown', handleKeyPress)
-function handleKeyPress() {
-  switch (window.event.keyCode) {
-    case 37:
-      previous()
-      break;
-    case 39:
-      next()
-      break;
-    case 13:
-      document.querySelector('#example img').click()
+document.addEventListener('keyup', handleKeyPress)
+
+function handleKeyPress(event) {
+  if (event.repeat) { return }
+  if (event.type === 'keydown') {
+    switch (event.keyCode) {
+      case 37:
+        previous(document.getElementById('arrow1'))
+        break;
+      case 39:
+        next(document.getElementById('arrow2'))
+        break;
+      case 13:
+        document.querySelector('#example iframe').click()
+        break;
+    }
+  } else if (event.type === 'keyup') {
+    switch (event.keyCode) {
+      case 37:
+        size(document.getElementById('arrow1'))
+        break;
+      case 39:
+        size(document.getElementById('arrow2'))
+        break;
+    }
   }
+
 }
 
 const images = [
-  '<img src="Images/covid.png" id="line-chart" style="opacity: 0" onclick="projectRedirect(this)">',
-  '<img src="Images/messageboard.png" id="messageboard" style="opacity: 0" onclick="projectRedirect(this)">',
-  '<img src="Images/worldMap.png" id="game-ratings" style="opacity: 0" onclick="projectRedirect(this)">',
-  '<img src="Images/pomodoro-clock.png" id="pomodoro" style="opacity: 0" onclick="projectRedirect(this)">',
-  '<img src="Images/brick-destroyer.png" id="brick-destroyer" style="opacity: 0" onclick="projectRedirect(this)">'
+  '<iframe src="Data Visualizations/Covid Visualization/covid3.html" id="line-chart" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src="Messageboard/views/index.html" id="messageboard" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src="Data Visualizations/Game Ratings/Q5/choropleth.html" id="game-ratings" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src="Pomodoro Clock/index.html" id="pomodoro" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src="BrickDestroyer/index.html" id="brick-destroyer" style="opacity: 0" onclick="projectRedirect(this)"></iframe>'
 ]
 
 let index = 0
-function next() {
+function next(ele) {
+  ele.style.width = '100px'
+  ele.style.right = '25px'
+  ele.style.top = '250px'
+
   if (index >= images.length - 1) {
     index = -1
   }
 
   index++;
 
-  document.querySelector('#example img').style.opacity = 0
-  setTimeout(() => {
-    document.getElementById('example').innerHTML = images[index]
-  }, 200);
-  setTimeout(() => {
-    document.querySelector('#example img').style.opacity = 1
-  }, 220);
+  document.querySelector('#example iframe').style.opacity = 0
 }
 
-function previous() {
+function previous(ele) {
+  ele.style.width = '100px'
+  ele.style.left = '25px'
+  ele.style.top = '250px'
+
   if (index <= 0) {
     index = images.length
   }
   index--;
 
-  document.querySelector('#example img').style.opacity = 0
+  document.querySelector('#example iframe').style.opacity = 0
+}
+
+function size(ele) {
+  ele.style.width = '130px'
+  ele.style.top = '235px'
+  ele.style.left = ''
+  ele.style.right = ''
+
   setTimeout(() => {
     document.getElementById('example').innerHTML = images[index]
   }, 200);
   setTimeout(() => {
-    document.querySelector('#example img').style.opacity = 1
+    document.querySelector('#example iframe').style.opacity = 1
   }, 220);
 }
+
+let condition = 'show'
+function toggle(ele) {
+  let cv = document.getElementById('cv')
+  if (condition == 'show') {
+    condition = 'hide'
+    ele.src = 'Images/plus-icon.png'
+    cv.style.height = '20px'
+  } else {
+    condition = 'show'
+    ele.src = 'Images/minus-icon.png'
+    cv.style.height = ''
+  }
+}
+
+let header = document.getElementsByTagName('header')[0]
+header.innerHTML = '<h1 id="title">Michael Manke</h1><p>This is the go-to website for anything that I have worked on.</p>'
+header.style.opacity = 1

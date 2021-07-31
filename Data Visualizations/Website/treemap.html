@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Zoomable treemap</title>
+  <style>
+    #chart {
+      background: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    text {
+      pointer-events: none;
+    }
+
+    .grandparent text {
+      font-weight: bold;
+    }
+
+    rect {
+      fill: none;
+      stroke: #fff;
+    }
+
+    rect.parent,
+    .grandparent rect {
+      stroke-width: 2px;
+    }
+
+    rect.parent {
+      pointer-events: none;
+    }
+
+    .grandparent rect {
+      fill: orange;
+    }
+
+    .grandparent:hover rect {
+      fill: #ee9700;
+    }
+
+    .children rect.parent,
+    .grandparent rect {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <select id='selection' onchange="load(this.value)">
+    <option value="Processed_Data/2016-2017-Table.csv">2016-2017</option>
+    <option value="Processed_Data/2017-2018-Table.csv">2017-2018</option>
+    <option value="Processed_Data/2018-2019-Table.csv">2018-2019</option>
+  </select>
+  <div id="chart"></div>
+
+  <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+  <script src='treemap.js'></script>
+</body>
+
+</html>

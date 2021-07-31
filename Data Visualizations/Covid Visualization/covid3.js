@@ -39,7 +39,7 @@ parser = d3.timeParse(d3.timeParse('%Y-%m-%d'))
 
 // Global variables (countries, colors, scales)
 
-const numberOfCountries = 222
+const numberOfCountries = 14
 
 /*
 Allow the user to change the number of Countries:
@@ -309,8 +309,3 @@ function numberWithCommas(x) {
 }
 
 load()
-
-document.getElementById('home-button').addEventListener('click', () => {
-  console.log('works')
-  //location.href = "https://mmanke188.github.io/index.html"
-})
