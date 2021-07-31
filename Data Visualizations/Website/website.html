@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' />
+	<title></title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<style>
+		body {
+
+			margin: auto;
+			margin-top: 20px;
+		}
+
+		.svg {
+			display: block;
+			margin: auto;
+		}
+
+		.title {
+
+			font-weight: bold;
+			font-size: 20px;
+			color: black;
+		}
+
+		.select {
+			margin-left: 10px;
+			color: white;
+			font-size: 20px;
+			font-weight: bold;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div style=" float:left; background-color:grey">
+		<svg id="chart" width="650" height="420"></svg>
+		<div class="select">
+			Select year:
+			<select id="year"></select>
+			<input type="checkbox" id="sort">
+			Toggle sort
+		</div>
+	</div>
+
+	<div style="float:left;  background-color:grey">
+		<svg id="chart1" width="650" height="420"></svg>
+		<div class="select">
+			Select year:
+			<select id="year1"></select>
+			<input type="checkbox" id="sort1">
+			Toggle sort
+		</div>
+	</div>
+
+	<script>
+		d3.csv("disposal.csv").then(d => chart(d))
+		function chart(csv) {
+
+			var keys = csv.columns.slice(2);
+
+			var year = [...new Set(csv.map(d => d.Year))]
+			var states = [...new Set(csv.map(d => d.Jurisdiction))]
+
+			var options = d3.select("#year").selectAll("option")
+				.data(year)
+				.enter().append("option")
+				.text(d => d)
+
+
+			var svg = d3.select("#chart"),
+				margin = { top: 55, left: 45, bottom: 0, right: 65 },
+				width = +svg.attr("width") - margin.left - margin.right,
+				height = +svg.attr("height") - margin.top - margin.bottom;
+
+
+			var y = d3.scaleBand()
+				.range([margin.top, height - margin.bottom])
+				.padding(0.1)
+				.paddingOuter(0.2)
+				.paddingInner(0.2)
+
+			var x = d3.scaleLinear()
+				.range([margin.left, width - margin.right])
+
+			var yAxis = svg.append("g")
+				.attr("transform", `translate(${margin.left},0)`)
+				.attr("class", "y-axis")
+				.style("font-weight", "bold")
+				.style("color", "white")
+
+
+			var xAxis = svg.append("g")
+				.attr("transform", `translate(0,${margin.top})`)
+				.attr("class", "x-axis")
+
+			var z = d3.scaleThreshold()
+				.range(['#edfc1b', '#ec6f3b', '#bc2e67', '#7c0093', '#0b0074'])
+				.domain(keys)
+
+
+			update(d3.select("#year").property("value"), 0)
+
+			function update(input, speed) {
+
+				var data = csv.filter(f => f.Year == input)
+
+				data.forEach(function (d) {
+					d.total = d3.sum(keys, k => +d[k])
+					return d
+				})
+
+				x.domain([0, d3.max(data, d => d.total)]).nice();
+
+				data.sort(d3.select("#sort").property("checked")
+					? (a, b) => b.total - a.total
+					: (a, b) => states.indexOf(a.Jurisdiction) - states.indexOf(b.Jurisdiction))
+
+				y.domain(data.map(d => d.Jurisdiction));
+
+				svg.selectAll(".y-axis").transition().duration(speed)
+					.call(d3.axisLeft(y).tickSizeOuter(0))
+
+				var group = svg.selectAll("g.layer")
+					.data(d3.stack().keys(keys)(data), d => d.key)
+
+				group.exit().remove()
+
+				group.enter().insert("g", ".y-axis").append("g")
+					.classed("layer", true)
+					.attr("fill", d => z(d.key));
+
+				var bars = svg.selectAll("g.layer").selectAll("rect")
+					.data(d => d, e => e.data.Jurisdiction);
+
+				bars.exit().remove()
+
+				bars.enter().append("rect")
+					.attr("height", y.bandwidth())
+					.merge(bars)
+					.transition().duration(speed)
+					.attr("y", d => y(d.data.Jurisdiction))
+					.attr("x", d => x(d[0]))
+					.attr("width", d => x(d[1]) - x(d[0]))
+
+
+
+				var text = svg.selectAll(".text")
+					.data(data, d => d.Jurisdiction);
+
+				text.exit().remove()
+
+				text.enter().append("text")
+					.attr("class", "text")
+					.attr("text-anchor", "start")
+					.merge(text)
+					.transition().duration(speed)
+					.attr("y", d => y(d.Jurisdiction) + y.bandwidth() / 2)
+					.attr("x", d => x(d.total) + 5)
+					.text(d => d.total)
+					.style("fill", "white")
+
+				svg.append("text").attr("x", width / 3).attr("y", 25).attr("class", "title").text("Total Plastic Generation").style("fill", "white");
+			}
+
+
+			var legend = svg.append("g")
+				.attr("font-family", "sans-serif")
+				.attr("font-size", 10)
+				.attr("text-anchor", "end")
+				.selectAll("g")
+				.data(keys.slice().reverse())
+				.enter().append("g")
+				.attr("transform", function (d, i) { return "translate(-50," + (300 + i * 20) + ")"; });
+
+			legend.append("rect")
+				.attr("x", 390)
+				.attr("width", 19)
+				.attr("height", 19)
+				.attr("fill", z);
+
+			legend.append("text")
+				.attr("x", 500)
+				.attr("y", 9.5)
+				.attr("dy", "0.32em")
+				.style("fill", "white")
+				.style("font-weight", "bold")
+				.text(function (d) { return d; });
+
+
+			var select = d3.select("#year")
+				.on("change", function () {
+					update(this.value, 750)
+				})
+
+			var checkbox = d3.select("#sort")
+				.on("click", function () {
+					update(select.property("value"), 750)
+				})
+
+		}
+
+	</script>
+
+	<script>
+		d3.csv("recycling.csv").then(d => chart1(d));
+
+		function chart1(csv) {
+
+			csv.forEach(function (d) {
+				d.PlasticRecycled = +d.PlasticRecycled;
+				return d;
+			})
+
+			var years = [...new Set(csv.map(d => d.Year))];
+			var states = [...new Set(csv.map(d => d.Jurisdiction))]
+
+			var options = d3.select("#year1").selectAll("option")
+				.data(years)
+				.enter().append("option")
+				.text(d => d)
+
+			var svg = d3.select("#chart1"),
+				margin = { top: 55, left: 45, bottom: 0, right: 65 },
+				width = +svg.attr("width") - margin.left - margin.right,
+				height = +svg.attr("height") - margin.top - margin.bottom;
+
+			var y = d3.scaleBand()
+				.range([margin.top, height - margin.bottom])
+				.padding(0.1)
+				.paddingOuter(0.2)
+				.paddingInner(0.2)
+
+			var x = d3.scaleLinear()
+				.range([margin.left, width - margin.right])
+
+
+			var yAxis = svg.append("g")
+				.attr("transform", `translate(${margin.left},0)`)
+				.attr("class", "y-axis")
+				.style("font-weight", "bold")
+				.style("color", "white")
+
+			var xAxis = svg.append("g")
+				.attr("transform", `translate(0,${margin.top})`)
+				.attr("class", "x-axis")
+
+			update(d3.select("#year1").property("value"), 0)
+
+			function update(year, speed) {
+
+				var data = csv.filter(f => f.Year == year)
+
+				x.domain([0, d3.max(data, d => d.PlasticRecycled)]).nice();
+
+
+
+				data.sort(d3.select("#sort1").property("checked")
+					? (a, b) => b.PlasticRecycled - a.PlasticRecycled
+					: (a, b) => states.indexOf(a.Jurisdiction) - states.indexOf(b.Jurisdiction))
+
+				y.domain(data.map(d => d.Jurisdiction));
+
+
+				svg.selectAll(".y-axis").transition().duration(speed)
+					.call(d3.axisLeft(y).tickSizeOuter(0))
+
+
+				var bar = svg.selectAll(".bar")
+					.data(data, d => d.Jurisdiction)
+
+				bar.exit().remove();
+
+				bar.enter().append("rect")
+					.attr("class", "bar")
+					.attr("fill", "#bc2e67")
+					.attr("height", y.bandwidth())
+					.merge(bar)
+					.transition().duration(speed)
+					.attr("y", d => y(d.Jurisdiction))
+					.attr("x", d => x(0))
+					.attr("width", d => x(d.PlasticRecycled) - x(0))
+
+
+				var total = d3.sum(data, d => +d.PlasticRecycled)
+				var average = total / data.length;
+
+				const f = d3.format(".2f");
+				var line = svg.append('line')
+					.style("stroke", "orange")
+					.style("stroke-dasharray", ("4, 4"))
+					.attr("y1", y(1))
+					.attr("y2", height)
+					.attr("x1", x(average))
+					.attr("x2", x(average));
+
+
+
+				var txt = svg.append("text")
+					.attr("transform", "translate(" + (height - 60) + "," + x(average) + ")")
+					.attr("dy", "13em")
+					.attr("text-anchor", "end")
+					.style("fill", "orange")
+					.html("Average of " + year + " = " + f(average) + "%");
+
+				txt.exit().remove();
+
+				var text = svg.selectAll(".text")
+					.data(data, d => d.Jurisdiction);
+
+				text.exit().remove()
+
+				text.enter().append("text")
+					.attr("class", "text")
+					.attr("text-anchor", "start")
+					.merge(text)
+					.transition().duration(speed)
+					.attr("y", d => y(d.Jurisdiction) + y.bandwidth() / 2)
+					.attr("x", d => x(d.PlasticRecycled) + 5)
+					.text(d => d.PlasticRecycled + "%")
+					.style("fill", "white")
+				svg.append("text").attr("x", width / 3).attr("y", 25).attr("class", "title").text("Plastic Recycled Percent").style("fill", "white");
+
+			}
+
+			chart.update = update;
+		}
+
+		var select = d3.select("#year1")
+			.style("border-radius", "5px")
+			.on("change", function () {
+				chart.update(this.value, 750)
+			})
+
+		var checkbox = d3.select("#sort1")
+			.style("margin-left", "45%")
+			.on("click", function () {
+				chart.update(select.property("value"), 750)
+			})
+
+
+	</script>
+
+</body>
+
+</html>

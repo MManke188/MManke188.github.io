@@ -7,20 +7,20 @@ export default class Paddle {
     this.width = 150;
     this.height = 20;
 
-    this.maxSpeed = 7;
+    this.maxSpeed = 9;
     this.speed = 0;
 
     this.position = {
-      x: game.gameWidth/2 - this.width/2,
-      y: game.gameHeight - this.height - 10 
+      x: game.gameWidth / 2 - this.width / 2,
+      y: game.gameHeight - this.height - 10
     };
 
   };
 
   reset() {
     this.position = {
-      x: game.gameWidth/2 - this.width/2,
-      y: game.gameHeight - this.height - 10 
+      x: game.gameWidth / 2 - this.width / 2,
+      y: game.gameHeight - this.height - 10
     };
     this.speed = 0;
   }
@@ -39,22 +39,22 @@ export default class Paddle {
 
   draw(ctx) {
     ctx.drawImage(
-      this.image, 
+      this.image,
       this.position.x,
       this.position.y,
-      this.width, 
+      this.width,
       this.height
     );
   }
 
-  update() { 
+  update() {
     this.position.x += this.speed
-    
-    if(this.position.x < 0) {
+
+    if (this.position.x < 0) {
       this.position.x = 0
-    } else if(this.position.x > this.gameWidth - this.width) {
+    } else if (this.position.x > this.gameWidth - this.width) {
       this.position.x = this.gameWidth - this.width
     }
   }
-  
+
 }

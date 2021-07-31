@@ -10,14 +10,12 @@
 </head>
 
 <body>
-  <div id='header'>
-    <h1 id="title">Michael Manke</h1>
-    <p>This is the go-to website for anything that I have worked on.</p>
-  </div>
+  <header>
+  </header>
 
   <div class="container">
     <div id='cv'>
-      My CV: <br>
+      My CV: <img id="toggle" onclick="toggle(this)" src="Images/minus-icon.png"><br>
       <form method="get" target="_blank" action="Files/CV Michael Manke (english).pdf">
         <button type="submit" id="download-button">Download</button>
       </form>
@@ -28,12 +26,16 @@
   </div>
 
   <div id='preview' class="blur">
+    <button id="redirect" onclick="projectRedirect(document.getElementById('example').firstElementChild)">Open project
+      in new
+      tab</button>
+
     <div id="example">
-      <img src="Images/covid.png" id="line-chart" onclick="projectRedirect(this)">
+      <iframe src="Data Visualizations/Covid Visualization/covid3.html" id="line-chart"></iframe>
     </div>
 
-    <img class='arrow' id="arrow1" src="Images/arrow-icon.png" onclick="previous()">
-    <img class='arrow' id="arrow2" src="Images/arrow-icon.png" onclick="next()">
+    <img class='arrow' id="arrow1" src="Images/arrow-icon.png" onmousedown="previous(this)" onmouseup="size(this)">
+    <img class='arrow' id="arrow2" src="Images/arrow-icon.png" onmousedown="next(this)" onmouseup="size(this)">
   </div>
 
 
@@ -41,26 +43,26 @@
     <p>What follows is a list of all my larger personal projects:</p>
     <div id="list">
       <div class="project"><img src="Images/messageboard.png" id='messageboard'></div>
-      <div class="project"><img src='Images/arrow-icon.png' id='calculator'></div>
-      <div class="project"><img src='Images/choropleth.png' id='choropleth-map'></div>
-      <div class="project"><img src='Images/covid.png' id='line-chart'></div>
       <div class="project"><img src='Images/sudoku-solver.png' id='sudoku-solver'></div>
-      <div class="project"><img src='Images/arrow-icon.png' id='chatroom'></div>
+      <div class="project"><img src='Images/choropleth.png' id='choropleth-map'></div>
       <div class="project"><img src='Images/brick-destroyer.png' id='brick-destroyer'></div>
       <div class="project"><img src='Images/pomodoro-clock.png' id='pomodoro'></div>
       <div class="project"><img src='Images/personal-library.png' id='library'></div>
+      <div class="project"><img src='Images/covid.png' id='line-chart'></div>
       <div class="project"><img src='Images/stockprice-checker.png' id='stockprice-checker'></div>
-      <div class="project"><img src='Images/arrow-icon.png' id='arithmetic-arranger'></div>
-      <div class="project"><img src='Images/arrow-icon.png' id='issue-tracker'></div>
+      <div class="project"><img src='Images/treemap.png' id='treemap'></div>
+      <div class="project"><img src='Images/tooth.png' id='chatroom'></div>
+      <div class="project"><img src='Images/vector-visualization.png' id='arithmetic-arranger'></div>
+      <div class="project"><img src='Images/game-ratings.png' id='issue-tracker'></div>
     </div>
 
   </div>
 
   <footer>
-
+    <div id="reviews"></div>
   </footer>
 
-  <script src="./index.js"></script>
+  <script src="index.js"></script>
 </body>
 
 </html>
