@@ -4,6 +4,21 @@ for (let project of projects) {
   project.addEventListener('click', projectRedirect)
 }
 
+const covid = "Data Visualizations/Covid Visualization/covid3.html"
+const messageboard = "Messageboard/views/index.html"
+const game_ratings = "Data Visualizations/Game Ratings/Q5/choropleth.html"
+const pomodoro_clock = "Pomodoro Clock/index.html"
+const brick_destroyer = "BrickDestroyer/index.html"
+const chatroom = 'Chatroom/views/pug/index.pug'
+const american_education = 'Data Visualizations/American Education/index.html'
+const library = 'Personal Library/views/index.html'
+const stockprice_checker = 'Stock Price Checker/views/index.html'
+const sudoku_solver = 'Sudoku Solver/views/index.html'
+const treemap = 'Data Visualizations/Website/treemap.html'
+const tooth = 'Data Visualizations/asgmt11-jhuang948/index.html'
+const vector_visualization = 'Data Visualizations/asgmt12-jhuang948/index.html'
+
+
 function projectRedirect(event) {
   let project
   console.log(event)
@@ -14,37 +29,43 @@ function projectRedirect(event) {
   }
   switch (project) {
     case 'brick-destroyer':
-      window.open('BrickDestroyer/index.html', '_blank')
-      break;
-    case 'calculator':
-      window.open('Calculator/public/index.html', '_blank')
+      window.open(brick_destroyer, '_blank')
       break;
     case 'chatroom':
-      window.open('Chatroom/views/pug/index.pug', '_blank')
+      window.open(chatroom, '_blank')
       break;
     case 'line-chart':
-      window.open('Data Visualizations/Covid Visualization/covid3.html', '_blank')
+      window.open(covid, '_blank')
       break;
     case 'choropleth-map':
-      window.open('Data Visualizations/American Education/index.html', '_blank')
+      window.open(american_education, '_blank')
       break;
     case 'messageboard':
-      window.open('Messageboard/views/index.html', '_blank')
+      window.open(messageboard, '_blank')
       break;
     case 'library':
-      window.open('Personal Library/views/index.html', '_blank')
+      window.open(library, '_blank')
       break;
     case 'pomodoro':
-      window.open('Pomodoro Clock/index.html', '_blank')
+      window.open(pomodoro_clock, '_blank')
       break;
     case 'stockprice-checker':
-      window.open('Stock Price Checker/views/index.html', '_blank')
+      window.open(stockprice_checker, '_blank')
       break;
     case 'sudoku-solver':
-      window.open('Sudoku Solver/views/index.html', '_blank')
+      window.open(sudoku_solver, '_blank')
       break;
     case 'game-ratings':
-      window.open('Data Visualizations/Game Ratings/Q5/choropleth.html', '_blank')
+      window.open(game_ratings, '_blank')
+      break;
+    case 'treemap':
+      window.open(treemap, '_blank')
+      break;
+    case 'tooth':
+      window.open(tooth, '_blank')
+      break;
+    case 'vector-visualization':
+      window.open(vector_visualization, '_blank')
       break;
   }
 }
@@ -80,11 +101,11 @@ function handleKeyPress(event) {
 }
 
 const images = [
-  '<iframe src="Data Visualizations/Covid Visualization/covid3.html" id="line-chart" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src="Messageboard/views/index.html" id="messageboard" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src="Data Visualizations/Game Ratings/Q5/choropleth.html" id="game-ratings" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src="Pomodoro Clock/index.html" id="pomodoro" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src="BrickDestroyer/index.html" id="brick-destroyer" style="opacity: 0" onclick="projectRedirect(this)"></iframe>'
+  '<iframe src=' + covid + ' id="line-chart" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src=' + messageboard + ' id="messageboard" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src=' + game_ratings + ' id="game-ratings" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src=' + pomodoro_clock + ' id="pomodoro" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
 ]
 
 let index = 0
