@@ -5,7 +5,7 @@ for (let project of projects) {
 }
 
 const covid = "Data Visualizations/Covid Visualization/covid3.html"
-const messageboard = "https://Anonymous-Messageboard.battlekingcoder.repl.co"   //local link: "Messageboard/views/index.html"
+const messageboard = "Messageboard/views/index.html" //"https://Anonymous-Messageboard.battlekingcoder.repl.co"   //local link: 
 const game_ratings = "Data Visualizations/Game Ratings/Q5/choropleth.html"
 const pomodoro_clock = "Pomodoro Clock/index.html"
 const brick_destroyer = "BrickDestroyer/index.html"
