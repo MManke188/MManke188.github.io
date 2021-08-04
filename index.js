@@ -5,15 +5,15 @@ for (let project of projects) {
 }
 
 const covid = "Data Visualizations/Covid Visualization/covid3.html"
-const messageboard = "Messageboard/views/index.html" //"https://Anonymous-Messageboard.battlekingcoder.repl.co"   //local link: 
+const messageboard = "https://Anonymous-Messageboard.battlekingcoder.repl.co"   //local link: "Messageboard/views/index.html"
 const game_ratings = "Data Visualizations/Game Ratings/Q5/choropleth.html"
 const pomodoro_clock = "Pomodoro Clock/index.html"
 const brick_destroyer = "BrickDestroyer/index.html"
-const chatroom = ""   //local link: 'Chatroom/views/pug/index.pug'
+const chatroom = "https://Chatroom.battlekingcoder.repl.co"   //local link: 'Chatroom/views/pug/index.pug'
 const american_education = 'Data Visualizations/American Education/index.html'
-const library = ""   //local link: 'Personal Library/views/index.html'
-const stockprice_checker = ""   //local link: 'Stock Price Checker/views/index.html'
-const sudoku_solver = ""   //local link: 'Sudoku Solver/views/index.html'
+const library = "https://Personal-Library.battlekingcoder.repl.co"   //local link: 'Personal Library/views/index.html'
+const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"   //local link: 'Stock Price Checker/views/index.html'
+const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"   //local link: 'Sudoku Solver/views/index.html'
 const treemap = 'Data Visualizations/Website/treemap.html'
 const tooth = 'Data Visualizations/volume-rendering/index.html'
 const vector_visualization = 'Data Visualizations/vector-visualization/index.html'
