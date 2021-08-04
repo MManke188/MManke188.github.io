@@ -15,13 +15,12 @@ const library = 'Personal Library/views/index.html'
 const stockprice_checker = 'Stock Price Checker/views/index.html'
 const sudoku_solver = 'Sudoku Solver/views/index.html'
 const treemap = 'Data Visualizations/Website/treemap.html'
-const tooth = 'Data Visualizations/asgmt11-jhuang948/index.html'
-const vector_visualization = 'Data Visualizations/asgmt12-jhuang948/index.html'
+const tooth = 'Data Visualizations/volume-rendering/index.html'
+const vector_visualization = 'Data Visualizations/vector-visualization/index.html'
 
 
 function projectRedirect(event) {
   let project
-  console.log(event)
   if (event.srcElement !== undefined) {
     project = event.srcElement.id
   } else {
