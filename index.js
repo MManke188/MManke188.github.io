@@ -15,8 +15,8 @@ const library = "https://Personal-Library.battlekingcoder.repl.co"   //local lin
 const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"   //local link: 'Stock Price Checker/views/index.html'
 const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"   //local link: 'Sudoku Solver/views/index.html'
 const treemap = 'Data Visualizations/Website/treemap.html'
-const tooth = 'Data Visualizations/volume-rendering/index.html'
-const vector_visualization = 'Data Visualizations/vector-visualization/index.html'
+const tooth = 'Data Visualizations/volume-rendering1/index.html'
+const vector_visualization = 'Data Visualizations/vector-visualization1/index.html'
 
 
 function projectRedirect(event) {
