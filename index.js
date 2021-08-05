@@ -5,7 +5,7 @@ for (let project of projects) {
 }
 
 const covid = "DataVisualizations/CovidVisualization/index.html"
-const messageboard = "Messageboard/views/index.html"
+const messageboard = "Images/messageboard.png"
 const game_ratings = "DataVisualizations/GameRatings/Q5/choropleth.html"
 const pomodoro_clock = "PomodoroClock/index.html"
 const brick_destroyer = "BrickDestroyer/index.html"
@@ -100,11 +100,11 @@ function handleKeyPress(event) {
 }
 
 const images = [
-  '<iframe src=' + covid + ' id="line-chart" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src=' + messageboard + ' id="messageboard" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src=' + game_ratings + ' id="game-ratings" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src=' + pomodoro_clock + ' id="pomodoro" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
-  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0" onclick="projectRedirect(this)"></iframe>',
+  '<iframe src=' + covid + ' id="line-chart" style="opacity: 0""></iframe>',
+  '<img src=' + messageboard + ' id="messageboard" style="opacity: 0""></img>',
+  '<iframe src=' + game_ratings + ' id="game-ratings" style="opacity: 0""></iframe>',
+  '<iframe src=' + pomodoro_clock + ' id="pomodoro" style="opacity: 0""></iframe>',
+  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0""></iframe>',
 ]
 
 let index = 0
@@ -119,7 +119,7 @@ function next(ele) {
 
   index++;
 
-  document.querySelector('#example iframe').style.opacity = 0
+  document.querySelector('#example').childNodes[0].style.opacity = 0
 }
 
 function previous(ele) {
@@ -132,7 +132,7 @@ function previous(ele) {
   }
   index--;
 
-  document.querySelector('#example iframe').style.opacity = 0
+  document.querySelector('#example').childNodes[0].style.opacity = 0
 }
 
 function size(ele) {
@@ -145,7 +145,7 @@ function size(ele) {
     document.getElementById('example').innerHTML = images[index]
   }, 200);
   setTimeout(() => {
-    document.querySelector('#example iframe').style.opacity = 1
+    document.querySelector('#example').childNodes[0].style.opacity = 1
   }, 220);
 }
 
