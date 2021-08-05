@@ -111,7 +111,7 @@ let index = 0
 function next(ele) {
   ele.style.width = '100px'
   ele.style.right = '25px'
-  ele.style.top = '250px'
+  ele.style.top = '275px'
 
   if (index >= images.length - 1) {
     index = -1
@@ -125,7 +125,7 @@ function next(ele) {
 function previous(ele) {
   ele.style.width = '100px'
   ele.style.left = '25px'
-  ele.style.top = '250px'
+  ele.style.top = '275px'
 
   if (index <= 0) {
     index = images.length
@@ -137,7 +137,7 @@ function previous(ele) {
 
 function size(ele) {
   ele.style.width = '130px'
-  ele.style.top = '235px'
+  ele.style.top = '260px'
   ele.style.left = ''
   ele.style.right = ''
 
