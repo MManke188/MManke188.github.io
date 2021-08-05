@@ -4,19 +4,19 @@ for (let project of projects) {
   project.addEventListener('click', projectRedirect)
 }
 
-const covid = "Data Visualizations/Covid Visualization/covid3.html"
+const covid = "Data%20Visualizations/Covid%20Visualization/covid3.html"
 const messageboard = "https://Anonymous-Messageboard.battlekingcoder.repl.co"   //local link: "Messageboard/views/index.html"
-const game_ratings = "Data Visualizations/Game Ratings/Q5/choropleth.html"
-const pomodoro_clock = "Pomodoro Clock/index.html"
+const game_ratings = "Data%20Visualizations/Game%20Ratings/Q5/choropleth.html"
+const pomodoro_clock = "Pomodoro%20Clock/index.html"
 const brick_destroyer = "BrickDestroyer/index.html"
 const chatroom = "https://Chatroom.battlekingcoder.repl.co"   //local link: 'Chatroom/views/pug/index.pug'
-const american_education = 'Data Visualizations/American Education/index.html'
+const american_education = 'Data%20Visualizations/American%20Education/index.html'
 const library = "https://Personal-Library.battlekingcoder.repl.co"   //local link: 'Personal Library/views/index.html'
 const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"   //local link: 'Stock Price Checker/views/index.html'
 const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"   //local link: 'Sudoku Solver/views/index.html'
-const treemap = 'Data Visualizations/Website/treemap.html'
-const tooth = 'Data Visualizations/volume-rendering/index.html'
-const vector_visualization = 'Data Visualizations/vector-visualization/index.html'
+const treemap = 'Data%20Visualizations/Website/treemap.html'
+const tooth = 'Data%20Visualizations/volume-rendering/index.html'
+const vector_visualization = 'Data%20Visualizations/vector-visualization/index.html'
 
 
 function projectRedirect(event) {
