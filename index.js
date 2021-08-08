@@ -9,11 +9,11 @@ const messageboard = "Images/messageboard.png"
 const game_ratings = "DataVisualizations/GameRatings/Q5/choropleth.html"
 const pomodoro_clock = "PomodoroClock/index.html"
 const brick_destroyer = "BrickDestroyer/index.html"
-const chatroom = "https://Chatroom.battlekingcoder.repl.co"   //local link: 'Chatroom/views/pug/index.pug'
+const chatroom = "https://Chatroom.battlekingcoder.repl.co"
 const american_education = 'DataVisualizations/AmericanEducation/index.html'
-const library = "https://Personal-Library.battlekingcoder.repl.co"   //local link: 'Personal Library/views/index.html'
-const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"   //local link: 'Stock Price Checker/views/index.html'
-const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"   //local link: 'Sudoku Solver/views/index.html'
+const library = "https://Personal-Library.battlekingcoder.repl.co"
+const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"
+const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"
 const treemap = 'DataVisualizations/Website/treemap.html'
 const tooth = 'DataVisualizations/volume-rendering/index.html'
 const vector_visualization = 'DataVisualizations/vector-visualization/index.html'
@@ -162,7 +162,8 @@ function toggle(ele) {
     cv.style.height = ''
   }
 }
+toggle(document.getElementById('toggle'))
 
 let header = document.getElementsByTagName('header')[0]
-header.innerHTML = '<h1 id="title">Michael Manke</h1><p>This is the go-to website for anything that I have worked on.</p>'
+header.innerHTML = '<h1 id="title">Michael Manke</h1><p>Welcome to my website where I showcase my projects</p>'
 header.style.opacity = 1

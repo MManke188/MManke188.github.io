@@ -10,13 +10,16 @@ body {
 header {
   color: whitesmoke;
   text-align: center;
-  -webkit-text-stroke: 0.4px rgb(0, 0, 0);
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
   transition: opacity 3s ease-in 1s;
   opacity: 0;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 header p {
-  -webkit-text-stroke: 0.2px rgb(0, 0, 0);
+  -webkit-text-stroke: 0.3px rgb(0, 0, 0);
+  font-size: 25px;
 }
 
 #cv {
