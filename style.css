@@ -98,10 +98,6 @@ header p {
   opacity: 0;
 }
 
-#example img:hover {
-  cursor: pointer;
-}
-
 .arrow {
   width: 130px;
   position: absolute;

@@ -373,6 +373,24 @@ function main(o, data) {
       t1.remove().each("end", function () {
         transitioning = false;
       });
+
+      console.log(d.key)
+      if (d.key === "Total") {
+        document.querySelectorAll('.children rect').forEach((ele) => {
+          ele.style.cursor = 'zoom-in'
+        })
+        document.querySelectorAll('.grandparent rect').forEach((ele) => {
+          ele.style.cursor = ''
+        })
+
+      } else {
+        document.querySelectorAll('.children rect').forEach((ele) => {
+          ele.style.cursor = 'default'
+        })
+        document.querySelectorAll('.grandparent rect').forEach((ele) => {
+          ele.style.cursor = 'zoom-out'
+        })
+      }
     }
     return g;
   }

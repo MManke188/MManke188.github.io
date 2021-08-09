@@ -14,7 +14,7 @@ const american_education = 'DataVisualizations/AmericanEducation/index.html'
 const library = "https://Personal-Library.battlekingcoder.repl.co"
 const stockprice_checker = "https://Stockprice-Checker.battlekingcoder.repl.co"
 const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"
-const treemap = 'DataVisualizations/Website/treemap.html'
+const treemap = 'DataVisualizations/TrashDisposal/treemap.html'
 const tooth = 'DataVisualizations/volume-rendering/index.html'
 const vector_visualization = 'DataVisualizations/vector-visualization/index.html'
 
@@ -40,7 +40,7 @@ function projectRedirect(event) {
       window.open(american_education, '_blank')
       break;
     case 'messageboard':
-      window.open(messageboard, '_blank')
+      window.open("https://Anonymous-Messageboard.battlekingcoder.repl.co", '_blank')
       break;
     case 'library':
       window.open(library, '_blank')
