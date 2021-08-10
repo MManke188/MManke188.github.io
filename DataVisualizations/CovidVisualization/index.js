@@ -14,6 +14,7 @@ width = total_width - margins.left - margins.right
 height = total_height - margins.top - margins.bottom
 
 svg = graph.append('svg')
+  .attr('id', 'svg')
   .style('width', `${total_width}px`)
   .style('height', `${total_height}px`)
   .style('background-color', 'rgb(245, 245, 245)')
@@ -78,36 +79,26 @@ symbolScale = d3.scaleOrdinal()
 
 
 // Get, sort, filter and set up the data correctly
-function load() {
-  // Getting the covid data:
-  let covidData = 'https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.json'
+function load(data) {
+  console.log('This is the original data:')
+  console.log(data)
 
-  d3.json(covidData)
-    .then((data, error) => {
-      if (error) {
-        console.log(error)
-      } else {
-        console.log('This is the original data:')
-        console.log(data)
+  let category = options.names[0]
 
-        let category = options.names[0]
+  let modified = modify(data)
 
-        let modified = modify(data)
+  let filtered = filter(modified)
 
-        let filtered = filter(modified)
+  let sorted = sort(filtered, category)
 
-        let sorted = sort(filtered, category)
+  setUpCategories()
+  setUpCountries(sorted, category)
+  eventListeners(sorted, category)
 
-        setUpCategories()
-        setUpCountries(sorted, category)
-        eventListeners(sorted, category)
+  let country = sorted[0][0]
+  let finalData = setUp(sorted, country)
 
-        let country = sorted[0][0]
-        let finalData = setUp(sorted, country)
-
-        display(finalData, category)
-      }
-    })
+  display(finalData, category)
 }
 
 function modify(data) {
@@ -308,4 +299,37 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-load()
+
+var opts = {
+  lines: 9, // The number of lines to draw
+  length: 9, // The length of each line
+  width: 5, // The line thickness
+  radius: 14, // The radius of the inner circle
+  color: 'rgba(0,0,0, 0.8)', // #rgb or #rrggbb or array of colors
+  speed: 1.9, // Rounds per second
+  trail: 40, // Afterglow percentage
+  className: 'spinner', // The CSS class to assign to the spinner
+  position: 'relative',
+  left: '50%',
+  top: '50%'
+};
+
+function init() {
+  // trigger loader
+  var spinner = new Spinner(opts).spin(document.getElementById('graph'));
+
+  // load json data and trigger callback
+  d3.json('https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.json').then((data, error) => {
+    if (error) {
+      console.log(error)
+    } else {
+      // stop spin.js loader
+      spinner.stop();
+
+      // instantiate chart within callback
+      load(data)
+    }
+  });
+}
+
+init()

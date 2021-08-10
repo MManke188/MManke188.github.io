@@ -134,6 +134,11 @@ header p {
   text-align: center;
 }
 
+#projects p {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
 #list {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -206,7 +211,7 @@ form {
   border: 3px solid black;
   background-color: red;
   width: 600px;
-  height: 100px;
+  height: 140px;
   margin: 15px;
   padding: 5px;
 }
