@@ -195,16 +195,16 @@ let reviews = [
   }
 ]
 let i = 0
-function reviewShuffle(reviews, index) {
+function reviewShuffle() {
   let newIndex = Math.floor(Math.random() * reviews.length)
-  while (newIndex == index) {
+  while (newIndex == i) {
     newIndex = Math.floor(Math.random() * reviews.length)
   }
-  index = newIndex
-  console.log(reviews[index])
-  document.getElementById('text').innerHTML = '"' + reviews[index].text + '"'
-  document.getElementById('author').innerHTML = '- ' + reviews[index].author
+  i = newIndex
+  let review = reviews[i]
+  document.getElementById('text').innerHTML = '"' + review.text + '"'
+  document.getElementById('author').innerHTML = '- ' + review.author
 }
 window.setInterval(function () {
-  reviewShuffle(reviews, i)
+  reviewShuffle()
 }, 10000);
