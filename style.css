@@ -207,5 +207,25 @@ form {
   background-color: red;
   width: 600px;
   height: 100px;
-  margin: 10px;
+  margin: 15px;
+  padding: 5px;
+}
+
+#reviews h4 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#review {
+  padding: 5px;
+  background-color: rgba(5, 5, 5, 0.1);
+}
+
+#text {
+  color: whitesmoke;
+}
+
+
+#author {
+  font-style: italic;
 }

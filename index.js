@@ -167,3 +167,44 @@ toggle(document.getElementById('toggle'))
 let header = document.getElementsByTagName('header')[0]
 header.innerHTML = '<h1 id="title">Michael Manke</h1><p>Welcome to my website where I showcase my projects</p>'
 header.style.opacity = 1
+
+let reviews = [
+  {
+    text: 'Solid guy! Quality work! Helped me with my doubts and queries very patiently.',
+    author: 'okokok7'
+  },
+  {
+    text: 'Great work as usual!',
+    author: 'jordanhuang948'
+  },
+  {
+    text: 'Perfect',
+    author: 'jordanhuang948'
+  },
+  {
+    text: 'Great communication, careful about details. Delivered my work in time and was friendly all along the way.',
+    author: 'djamsf'
+  },
+  {
+    text: 'Delivered everything I asked for.',
+    author: 'streamlineninja'
+  },
+  {
+    text: 'm_manke delivered just what I asked and went the extra mile with this graph, very pleased with his work.',
+    author: 'angelante'
+  }
+]
+let i = 0
+function reviewShuffle(reviews, index) {
+  let newIndex = Math.floor(Math.random() * reviews.length)
+  while (newIndex == index) {
+    newIndex = Math.floor(Math.random() * reviews.length)
+  }
+  index = newIndex
+  console.log(reviews[index])
+  document.getElementById('text').innerHTML = '"' + reviews[index].text + '"'
+  document.getElementById('author').innerHTML = '- ' + reviews[index].author
+}
+window.setInterval(function () {
+  reviewShuffle(reviews, i)
+}, 10000);
