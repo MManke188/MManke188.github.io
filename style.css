@@ -236,8 +236,8 @@ footer {
 }
 
 #icons {
-  columns: 3;
-  column-gap: 60px;
+  columns: 5;
+  column-gap: 30px;
   margin-left: 300px;
   margin: auto;
 }
@@ -246,4 +246,9 @@ footer {
   height: 100px;
   width: 100px;
   border: 1px solid white;
+  background-color: whitesmoke;
+}
+
+.icon:hover {
+  cursor: pointer;
 }
