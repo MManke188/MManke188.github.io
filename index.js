@@ -17,6 +17,11 @@ const sudoku_solver = "https://Sudoku-Solver.battlekingcoder.repl.co"
 const treemap = 'DataVisualizations/TrashDisposal/treemap.html'
 const tooth = 'DataVisualizations/volume-rendering/index.html'
 const vector_visualization = 'DataVisualizations/vector-visualization/index.html'
+const github = 'https://github.com/MManke188'
+const fiverr = 'https://www.fiverr.com/m_manke'
+const mail = 'mailto:michaelmanke00@gmail.com'
+const freeCodeCamp = 'https://www.freecodecamp.org/mmanke'
+const replit = 'https://replit.com/@BattleKingCoder'
 
 
 function projectRedirect(event) {
@@ -65,6 +70,21 @@ function projectRedirect(event) {
       break;
     case 'vector-visualization':
       window.open(vector_visualization, '_blank')
+      break;
+    case 'github':
+      window.open(github, '_blank')
+      break;
+    case 'fiverr':
+      window.open(fiverr, '_blank')
+      break;
+    case 'mail':
+      window.open(mail, '_blank')
+      break;
+    case 'fCC':
+      window.open(freeCodeCamp, '_blank')
+      break;
+    case 'replit':
+      window.open(replit, '_blank')
       break;
   }
 }
