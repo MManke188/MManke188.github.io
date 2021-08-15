@@ -36,6 +36,15 @@ header p {
   overflow: hidden;
 }
 
+#lebenslauf {
+  width: 220px;
+  height: 320px;
+}
+
+#lebenslauf:hover {
+  cursor: pointer;
+}
+
 #toggle {
   width: 20px;
   position: absolute;
