@@ -22,10 +22,7 @@ const fiverr = 'https://www.fiverr.com/m_manke'
 const mail = 'mailto:michaelmanke00@gmail.com'
 const freeCodeCamp = 'https://www.freecodecamp.org/mmanke'
 const replit = 'https://replit.com/@BattleKingCoder'
-<<<<<<< HEAD
 const lebenslauf = 'Files/CV.pdf'
-=======
->>>>>>> f4c165c9d3b3c060bd4fc4fe6c14e1807b073364
 
 
 function projectRedirect(event) {
@@ -89,12 +86,9 @@ function projectRedirect(event) {
       break;
     case 'replit':
       window.open(replit, '_blank')
-<<<<<<< HEAD
       break;
     case 'lebenslauf':
       window.open(lebenslauf, '_blank')
-=======
->>>>>>> f4c165c9d3b3c060bd4fc4fe6c14e1807b073364
       break;
   }
 }
