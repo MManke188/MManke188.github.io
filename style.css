@@ -36,6 +36,7 @@ header p {
   overflow: hidden;
 }
 
+<<<<<<< HEAD
 #lebenslauf {
   width: 220px;
   height: 320px;
@@ -45,6 +46,8 @@ header p {
   cursor: pointer;
 }
 
+=======
+>>>>>>> f4c165c9d3b3c060bd4fc4fe6c14e1807b073364
 #toggle {
   width: 20px;
   position: absolute;
