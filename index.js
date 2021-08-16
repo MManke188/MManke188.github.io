@@ -88,7 +88,7 @@ function projectRedirect(event) {
       window.open(replit, '_blank')
       break;
     case 'lebenslauf':
-      window.open(lebenslauf, '_blank')
+      window.open(lebenslauf, '_blank', 'fullscreen=yes')
       break;
   }
 }
