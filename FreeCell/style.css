@@ -1,0 +1,156 @@
+body {
+  background-color: darkgreen;
+  position: absolute;
+}
+
+#content {
+  height: 700px;
+  width: 1400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#top {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+#buffer {
+  width: 40%;
+  height: 150px;
+  display: flex;
+}
+
+.buffer {
+  border: 1px solid lightgreen;
+  width: 106px;
+  height: 146px;
+  margin: 10px;
+}
+
+#picture {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+#picture:hover {
+  cursor: pointer;
+}
+
+#goal {
+  width: 40%;
+  height: 150px;
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.goal {
+  border: 1px solid lightgreen;
+  width: 106px;
+  height: 146px;
+  margin: 10px;
+}
+
+#field {
+  position: relative;
+}
+
+.card {
+  background-color: white;
+  width: 100px;
+  height: 140px;
+  margin: 10px;
+  position: absolute;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+#buffer1, #buffer2, #buffer3, #buffer4, #goal1, #goal2, #goal3, #goal4 {
+  position: relative;
+}
+
+.arrived {
+  position: absolute;
+}
+
+.buffered {
+  position: absolute;
+}
+
+#hurra {
+  text-align: center;
+  font-size: 100px;
+  color: white;
+  animation: opacityChange 2s ease-in;
+}
+
+@keyframes opacityChange {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+#restart {
+  margin-left: 665px;
+  margin-bottom: -10px;
+}
+
+#restart:hover {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  body {
+    transform: scale(0.35);
+    margin-top: -238px;
+    margin-left: -450px;
+  }
+}
+
+@media (min-width: 578px) {
+  body {
+    transform: scale(0.4);
+    margin-top: -216px;
+    margin-left: -388px;
+  }
+}
+
+@media (min-width: 866px) {
+  body {
+    transform: scale(0.6);
+    margin-top: -144px;
+    margin-left: -144px;
+  }
+}
+
+@media (min-width: 1152px) {
+  body {
+    transform: scale(0.8);
+    margin-top: -72px;
+    margin-left: -72px;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    transform: scale(1);
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1800px) {
+  body {
+    transform: scale(1.1);
+  }
+}

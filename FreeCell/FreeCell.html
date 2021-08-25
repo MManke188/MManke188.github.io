@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="FreeCell">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="stylesheet" href="style.css">
+  </link>
+</head>
+
+<body>
+  <p onclick="startGame()" id="restart">Restart Game</p>
+  <div id="content">
+    <div id="top">
+      <div id="buffer">
+        <div class="buffer" id="buffer1"></div>
+        <div class="buffer" id="buffer2"></div>
+        <div class="buffer" id="buffer3"></div>
+        <div class="buffer" id="buffer4"></div>
+      </div>
+
+      <img src="bilder/zuschauer.png" id="picture" onclick="generate()"></img>
+
+      <div id="goal">
+        <div class="goal" id="goal1"></div>
+        <div class="goal" id="goal2"></div>
+        <div class="goal" id="goal3"></div>
+        <div class="goal" id="goal4"></div>
+      </div>
+    </div>
+
+    <div id="field">
+      <div class="column" id="column1"></div>
+      <div class="column" id="column2"></div>
+      <div class="column" id="column3"></div>
+      <div class="column" id="column4"></div>
+      <div class="column" id="column5"></div>
+      <div class="column" id="column6"></div>
+      <div class="column" id="column7"></div>
+      <div class="column" id="column8"></div>
+    </div>
+  </div>
+
+  <script src="freecell.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,8 @@
 let projects = document.getElementsByClassName('project')
 
+console.log(window.innerHeight)
+console.log(window.innerWidth)
+
 for (let project of projects) {
   project.addEventListener('click', projectRedirect)
 }
@@ -23,6 +26,7 @@ const mail = 'mailto:michaelmanke00@gmail.com'
 const freeCodeCamp = 'https://www.freecodecamp.org/mmanke'
 const replit = 'https://replit.com/@BattleKingCoder'
 const lebenslauf = 'Files/CV.pdf'
+const freecell = 'FreeCell/FreeCell.html'
 
 
 function projectRedirect(event) {
@@ -88,7 +92,10 @@ function projectRedirect(event) {
       window.open(replit, '_blank')
       break;
     case 'lebenslauf':
-      window.open(lebenslauf, '_blank', 'fullscreen=yes')
+      window.open(lebenslauf, '_blank')
+      break;
+    case 'freecell':
+      window.open(freecell, '_blank')
       break;
   }
 }
