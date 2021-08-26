@@ -24,22 +24,23 @@ header p {
 }
 
 #cv {
-  border: 3px solid black;
-  margin: 5px;
-  padding: 5px;
+  border: 0.20vw solid black;
+  margin: 0.34vw;
+  padding: 0.34vw;
   display: grid;
   position: fixed;
-  right: 30px;
-  top: 15px;
+  right: 2.08vw;
+  top: 1.82vh;
   background-color: darkgray;
-  padding: 10px;
+  padding: 0.69vw;
   z-index: 5;
   overflow: hidden;
+  font-size: 1.11vw;
 }
 
 #lebenslauf {
-  width: 15.3vw;
-  height: 39vh;
+  width: 15.2vw;
+  height: 22.2vw;
 }
 
 #lebenslauf:hover {
@@ -47,10 +48,10 @@ header p {
 }
 
 #toggle {
-  width: 20px;
+  width: 1.38vw;
   position: absolute;
   right: 0px;
-  margin: 10px;
+  margin: 0.69vw;
 }
 
 #toggle:hover {
@@ -59,10 +60,10 @@ header p {
 
 #preview {
   position: relative;
-  border: 3px solid rgb(0, 0, 200);
+  border: 0.20vw solid rgb(0, 0, 200);
   background-color: rgba(169, 169, 169, 0.6);
-  margin: 20px 150px 20px 150px;
-  padding: 5px;
+  margin: 1.38vw 18.2vh 1.38vw 18.2vh;
+  padding: 0.34vw;
   width: 83%;
   height: 70%;
   margin: auto;
@@ -79,30 +80,17 @@ header p {
   height: fit-content;
 }
 
-#example iframe {
-  width: 100%;
-  height: 50vw;
+#example iframe, #example img {
+  width: 72.9vw;
+  height: 52vw;
   transform: scale(0.8);
   margin: auto;
-  margin-top: -50px;
+  margin-top: -6.09vh;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
   transition: opacity 0.2s ease-in-out;
-  border-radius: 10px;
-}
-
-#example img {
-  width: 1050px;
-  height: 750px;
-  transform: scale(0.8);
-  margin: auto;
-  margin-top: -50px;
-  -webkit-transition: opacity 0.2s ease-in-out;
-  -moz-transition: opacity 0.2s ease-in-out;
-  -o-transition: opacity 0.2s ease-in-out;
-  transition: opacity 0.2s ease-in-out;
-  border-radius: 10px;
+  border-radius: 0.69vw;
 }
 
 .smooth {
@@ -110,9 +98,9 @@ header p {
 }
 
 .arrow {
-  width: 130px;
+  width: 9.02vw;
   position: absolute;
-  top: 260px;
+  top: 19.0vw;
 }
 
 .arrow:hover {
@@ -121,16 +109,16 @@ header p {
 
 #arrow1 {
   transform: rotate(180deg);
-  left: 10px;
+  left: 0.69vw;
 }
 
 #arrow2 {
-  right: 10px;
+  right: 0.69vw;
 }
 
 .container {
   position: relative;
-  margin-top: 20px;
+  margin-top: 2.43vh;
 }
 
 #title {
@@ -139,8 +127,8 @@ header p {
 
 #projects {
   background-color: rgba(111, 111, 111, 0.6);
-  margin: 35px;
-  padding: 10px;
+  margin: 2.43vw;
+  padding: 0.69vw;
   text-align: center;
 }
 
@@ -156,24 +144,24 @@ header p {
 }
 
 .project {
-  border: 6px ridge white;
-  box-shadow: 0 0 0 1pt red;
-  border-radius: 10px;
-  height: 300px;
-  width: 400px;
+  border: 0.41vw ridge white;
+  box-shadow: 0 0 0 0.09vw red;
+  border-radius: 0.69vw;
+  height: 20.8vw;
+  width: 27.7vw;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 3.65vh;
   background-size: cover;
 }
 
 .project:hover {
   cursor: pointer;
-  border: 6px ridge white;
-  box-shadow: 0 0 0 2pt red;
+  border: 0.41vw ridge white;
+  box-shadow: 0 0 0 0.18vw red;
   transform: scale(1.05);
   margin-top: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 3.65vh;
 }
 
 .project img {
@@ -181,26 +169,30 @@ header p {
   width: fit-content;
   width: 100%;
   filter: saturate(1) contrast(0.8);
-  border-radius: 5px;
+  border-radius: 0.34vw;
 }
 
 .project img:hover {
   cursor: pointer;
   filter: saturate(1.5);
-  border-radius: 5px;
+  border-radius: 0.34vw;
 }
 
 form {
   display: grid;
   grid-template-rows: 100%;
   grid-template-columns: 60% 40%;
-  margin: auto;
-  margin-top: 10px;
+  width: 12.5vw;
+  height: 2.08vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
 }
 
 #download-button {
-  width: 180px;
-  height: 30px;
+  width: 12.5vw;
+  height: 2.08vw;
+  font-size: 0.90vw;
 }
 
 #download-button:hover {
@@ -208,7 +200,10 @@ form {
 }
 
 #redirect {
-  margin-left: 500px;
+  margin-left: 34.7vw;
+  font-size: 0.90vw;
+  width: fit-content;
+  height: fit-content;
 }
 
 #redirect:hover {
@@ -216,49 +211,58 @@ form {
 }
 
 footer {
-  border: 1px solid lightgray;
+  border: 0.06vw solid lightgray;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
-  padding: 25px;
+  align-content: start;
+  padding: 1.73vw;
+  height: 12.1vw;
 }
 
 #reviews {
-  border: 1px solid black;
+  border: 0.06vw solid black;
   background-color: rgba(240, 248, 255, 0.8);
-  width: 800px;
+  width: 55.5vw;
   height: fit-content;
-  padding: 5px;
+  padding: 0.34vw;
 }
 
 #reviews h4 {
   margin-top: 0px;
   margin-bottom: 0px;
+  font-size: 1.11vw;
 }
 
 #review {
-  padding: 5px;
+  padding: 0.34vw;
   background-color: rgba(150, 158, 165, 1);
+}
+
+#text {
+  font-size: 1.11vw;
 }
 
 #author {
   font-style: italic;
   color: whitesmoke;
+  font-size: 1.11vw;
 }
 
 #icons {
-  columns: 5;
-  column-gap: 10px;
-  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-content: flex-end;
 }
 
 #icons label {
   color: white;
+  font-size: 1.11vw;
 }
 
 .icon {
-  height: 100px;
-  width: 100px;
-  border: 1px solid white;
+  height: 6.94vw;
+  width: 6.94vw;
   background-color: whitesmoke;
 }
 

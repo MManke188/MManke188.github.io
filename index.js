@@ -1,8 +1,5 @@
 let projects = document.getElementsByClassName('project')
 
-console.log(window.innerHeight)
-console.log(window.innerWidth)
-
 for (let project of projects) {
   project.addEventListener('click', projectRedirect)
 }
@@ -140,9 +137,9 @@ const images = [
 
 let index = 0
 function next(ele) {
-  ele.style.width = '100px'
-  ele.style.right = '25px'
-  ele.style.top = '275px'
+  ele.style.width = '6.94vw'
+  ele.style.right = '1.73vw'
+  ele.style.top = '19.0vw'
 
   if (index >= images.length - 1) {
     index = -1
@@ -154,9 +151,9 @@ function next(ele) {
 }
 
 function previous(ele) {
-  ele.style.width = '100px'
-  ele.style.left = '25px'
-  ele.style.top = '275px'
+  ele.style.width = '6.94vw'
+  ele.style.left = '1.73vw'
+  ele.style.top = '19.0vw'
 
   if (index <= 0) {
     index = images.length
@@ -167,8 +164,8 @@ function previous(ele) {
 }
 
 function size(ele) {
-  ele.style.width = '130px'
-  ele.style.top = '260px'
+  ele.style.width = '9.02vw'
+  ele.style.top = '18.0vw'
   ele.style.left = ''
   ele.style.right = ''
 
@@ -186,7 +183,7 @@ function toggle(ele) {
   if (condition == 'show') {
     condition = 'hide'
     ele.src = 'Images/plus-icon.png'
-    cv.style.height = '20px'
+    cv.style.height = '1.38vw'
   } else {
     condition = 'show'
     ele.src = 'Images/minus-icon.png'
