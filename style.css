@@ -214,6 +214,7 @@ footer {
   border: 0.06vw solid lightgray;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
+  flex-direction: row;
   align-content: start;
   padding: 1.73vw;
   height: 12.1vw;
@@ -251,13 +252,19 @@ footer {
 #icons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-content: flex-end;
 }
 
 #icons label {
   color: white;
   font-size: 1.11vw;
+}
+
+#icons div {
+  height: 8vw;
+  width: 8vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .icon {

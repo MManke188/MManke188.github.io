@@ -100,11 +100,11 @@ function moveElement(cardEle) {
 
   function move() {
     let cardIndex = Array.from(cardEle.parentNode.children).indexOf(cardEle)
-    let stackLength = cardEle.parentNode.childElementCount - 1
+    let columnLength = cardEle.parentNode.childElementCount
 
     // We generate the array for the stack the user selected
     let stack = []
-    for (let i = cardIndex; i <= stackLength; i++) {
+    for (let i = cardIndex; i < columnLength; i++) {
       stack.push(getCard(cardEle.parentNode.children[i]))
     }
     // If the stack is a valid stack we find the desired destination of it
@@ -116,6 +116,8 @@ function moveElement(cardEle) {
 
 // This function checks wether or not a stack is valid or not
 function checkstack(stack) {
+  stack = stack.reverse()
+  let condition = true
   // If there is only one card it is a valid stack
   if (stack.length == 1) {
     return true
@@ -124,20 +126,23 @@ function checkstack(stack) {
   let number = stack[0].number
   let index = order.indexOf(number)
 
-  stack.forEach((card, i) => {
+  stack.some((card, i) => {
+    console.log(card)
     let color = card.color
     let currentNum = card.number
 
     // First check the order of the numbers
-    if (order.indexOf(currentNum) != index - i) {
-      return false
+    if (order.indexOf(currentNum) != index + i) {
+      condition = false
+      return true
     }
     // Then check the order of the numbers
     if (i > 0 && color == stack[i - 1].color) {
-      return false
+      condition = false
+      return true
     }
   })
-  return true
+  return condition
 }
 
 
