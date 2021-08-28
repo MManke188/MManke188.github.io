@@ -87,8 +87,9 @@ body {
 }
 
 #hurra {
-  width: 55.5vw;
-  height: 41.6vw;
+  text-align: center;
+  font-size: 6.94vw;
+  color: white;
   animation: opacityChange 2s ease-in;
 }
 

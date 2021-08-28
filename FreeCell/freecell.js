@@ -1,6 +1,6 @@
 const order = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King']
 
-const cardDistance = 40
+const cardDistance = 2.77
 
 let board = []
 // This function generates the board
@@ -82,7 +82,7 @@ function startGame() {
   // We generate the board from the board array
   board.forEach((column, index) => {
     column.forEach((card, i) => {
-      document.getElementById('column' + (index + 1)).innerHTML += '<img src="bilder/' + card.suit + '/' + card.number + '.png" id="' + card.number + '_' + card.suit + '-' + card.color + '" class="card" style="left: ' + index * 180 + 'px; top:' + i * cardDistance + 'px;"></img>'
+      document.getElementById('column' + (index + 1)).innerHTML += '<img src="bilder/' + card.suit + '/' + card.number + '.png" id="' + card.number + '_' + card.suit + '-' + card.color + '" class="card" style="left: ' + index * 12.5 + 'vw; top:' + i * cardDistance + 'vw;"></img>'
     })
   })
 
@@ -127,7 +127,6 @@ function checkstack(stack) {
   let index = order.indexOf(number)
 
   stack.some((card, i) => {
-    console.log(card)
     let color = card.color
     let currentNum = card.number
 
@@ -167,16 +166,15 @@ function findDestination(e) {
 
   // Afterwards check for available columns
   // This checks for an available column:
-  // This should be transformed into a some loop
   Array.from(document.getElementsByClassName('column')).some((column, index) => {
     // If we aren't checking the current column and the card wasn't move to the goal yet
     if (index !== currentCol && (!movedACard || !foundACard)) {
-      let top = column.childElementCount * 40 + 'px'
+      let top = column.childElementCount * 2.77 + 'vw'
       if (column.childElementCount >= 10) {
-        top = 400 + (column.childElementCount - 10) * 35 + 'px'
+        top = 27.7 + (column.childElementCount - 10) * 2.43 + 'vw'
       }
       let destination = {
-        left: index * 180 + 'px',
+        left: index * 12.5 + 'vw',
         top: top
       }
 
@@ -209,9 +207,9 @@ function findDestination(e) {
           if (i > 0) {
             document.getElementById('column' + column.id.slice(-1,)).appendChild(e)
             e.style.left = destination.left
-            let top = (column.childElementCount - 1) * 40 + 'px'
+            let top = (column.childElementCount - 1) * 2.77 + 'vw'
             if (column.childElementCount - 1 >= 10) {
-              top = 400 + (column.childElementCount - 1 - 10) * 35 + 'px'
+              top = 27.7 + (column.childElementCount - 1 - 10) * 2.43 + 'vw'
             }
             e.style.top = top
           }
@@ -227,6 +225,7 @@ function findDestination(e) {
   })
 
 
+
   // Here you move the card to the buffer:
   if (stack.length == 1 && !movedACard) {
     let buffer = Array.from(document.getElementsByClassName('buffer'))
@@ -234,8 +233,8 @@ function findDestination(e) {
       if (field.childElementCount == 0) {
         field.appendChild(e)
         e.classList += ' buffered'
-        e.style.left = '-8px'
-        e.style.top = '-8px'
+        e.style.left = '-0.55vw'
+        e.style.top = '-0.55vw'
         movedACard = true
         return movedACard
       }
@@ -329,8 +328,8 @@ function goalCheck(card, e, movedACard) {
       if (card.number == 'Ace') {
         field.appendChild(e)
         e.classList += ' arrived'
-        e.style.left = '-8px'
-        e.style.top = '-8px'
+        e.style.left = '-0.55vw'
+        e.style.top = '-0.55vw'
         e.onclick = null
         movedACard = true
         return movedACard
@@ -338,8 +337,8 @@ function goalCheck(card, e, movedACard) {
     } else if (getCard(field.lastChild).suit == getCard(e).suit && order.indexOf(getCard(field.lastChild).number) + 1 == order.indexOf(card.number)) {
       field.appendChild(e)
       e.classList += ' arrived'
-      e.style.left = '-8px'
-      e.style.top = '-8px'
+      e.style.left = '-0.55vw'
+      e.style.top = '-0.55vw'
       e.onclick = null
       movedACard = true
       return movedACard
