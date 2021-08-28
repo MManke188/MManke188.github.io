@@ -39,6 +39,7 @@ body {
 
 #picture:hover {
   cursor: pointer;
+  filter: invert(1);
 }
 
 #goal {
