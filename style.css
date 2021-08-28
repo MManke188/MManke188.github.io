@@ -178,25 +178,22 @@ header p {
   border-radius: 0.34vw;
 }
 
-form {
-  display: grid;
-  grid-template-rows: 100%;
-  grid-template-columns: 60% 40%;
-  width: 12.5vw;
-  height: 2.08vw;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: auto;
+#download-button {
+  margin: auto;
 }
 
-#download-button {
+#download-button button {
+  text-decoration: none;
+  color: #000;
   width: 12.5vw;
   height: 2.08vw;
   font-size: 0.90vw;
+  margin-top: auto;
 }
 
-#download-button:hover {
+#download-button button:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 #redirect {
