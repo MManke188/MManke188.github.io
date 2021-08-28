@@ -1,7 +1,3 @@
-p {
-  font-size: 1.11vw;
-}
-
 body {
   background-color: darkgreen;
   position: absolute;
@@ -103,8 +99,9 @@ body {
 }
 
 #restart {
-  margin-left: 45.5vw;
+  margin-left: 46.1vw;
   margin-bottom: -0.694vw;
+  font-size: 1.11vw;
 }
 
 #restart:hover {
