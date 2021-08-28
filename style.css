@@ -76,7 +76,6 @@ header p {
   -webkit-transform-origin: 0 0;
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
-  width: 100%;
   height: fit-content;
 }
 
@@ -199,8 +198,8 @@ header p {
 #redirect {
   margin-left: 34.7vw;
   font-size: 0.90vw;
-  width: fit-content;
-  height: fit-content;
+  width: 12vw;
+  height: 2vw;
 }
 
 #redirect:hover {
@@ -220,7 +219,7 @@ footer {
 #reviews {
   border: 0.06vw solid black;
   background-color: rgba(240, 248, 255, 0.8);
-  width: 55.5vw;
+  width: 50vw;
   height: fit-content;
   padding: 0.34vw;
 }
@@ -249,6 +248,7 @@ footer {
 #icons {
   display: flex;
   flex-direction: row;
+  margin-left: auto;
 }
 
 #icons label {
