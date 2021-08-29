@@ -15,12 +15,14 @@ header {
   transition: opacity 3s ease-in 1s;
   opacity: 0;
   font-size: 5vh;
-  line-height: 1.85vw;
+  line-height: 1.6em;
 }
 
 header p {
   -webkit-text-stroke: 0.02em rgb(0, 0, 0);
   font-size: 0.83em;
+  line-height: 1em;
+  margin: 5px;
 }
 
 #cv {
@@ -110,9 +112,9 @@ header p {
 }
 
 .arrow {
-  width: 9.02vw;
+  width: 10%;
   position: absolute;
-  top: 19.0vw;
+  top: 40%;
 }
 
 .arrow:hover {
@@ -121,11 +123,11 @@ header p {
 
 #arrow1 {
   transform: rotate(180deg);
-  left: 0.69vw;
+  left: 1%;
 }
 
 #arrow2 {
-  right: 0.69vw;
+  right: 1%;
 }
 
 .container {
@@ -178,7 +180,6 @@ header p {
 
 .project img {
   height: 100%;
-  width: fit-content;
   width: 100%;
   filter: saturate(1) contrast(0.8);
   border-radius: 0.34vw;
@@ -226,7 +227,7 @@ footer {
   flex-direction: row;
   align-content: start;
   padding: 1.73vw;
-  height: 12.1vw;
+  height: fit-content;
 }
 
 #reviews {
@@ -240,7 +241,7 @@ footer {
 #reviews h4 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: 1.11vw;
+  font-size: 1.94vh;
 }
 
 #review {
@@ -249,13 +250,13 @@ footer {
 }
 
 #text {
-  font-size: 1.11vw;
+  font-size: 1.94vh;
 }
 
 #author {
   font-style: italic;
   color: whitesmoke;
-  font-size: 1.11vw;
+  font-size: 1.94vh;
 }
 
 #icons {
@@ -266,7 +267,7 @@ footer {
 
 #icons label {
   color: white;
-  font-size: 1.11vw;
+  font-size: 1.94vh;
 }
 
 #icons div {
@@ -275,6 +276,7 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .icon {
@@ -294,10 +296,36 @@ footer {
   }
 }
 
-@media (min-width: 250px) {
+@media (max-width: 699px) {
   .project {
     min-width: 300px;
     min-height: 225px;
+    border: 2px ridge white;
+    box-shadow: 0 0 0 2px red;
+  }
+  .project img {
+    height: 98%;
+  }
+  footer {
+    flex-direction: column;
+    height: fit-content;
+    align-items: center;
+  }
+  #icons {
+    margin-left: 0px;
+    margin-top: 10px;
+  }
+  #reviews {
+    width: 90%;
+  }
+  #icons div {
+    min-width: 70px;
+    min-height: 70px;
+  }
+  .icon {
+    height: 50px;
+    width: 50px;
+    background-color: whitesmoke;
   }
 }
 

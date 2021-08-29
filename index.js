@@ -132,14 +132,14 @@ const images = [
   '<img src=' + messageboard + ' id="messageboard" style="opacity: 0""></img>',
   '<iframe src=' + game_ratings + ' id="game-ratings" style="opacity: 0""></iframe>',
   '<iframe src=' + pomodoro_clock + ' id="pomodoro" style="opacity: 0""></iframe>',
-  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0""></iframe>',
+  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0""></iframe>'
 ]
 
 let index = 0
 function next(ele) {
-  ele.style.width = '6.94vw'
-  ele.style.right = '1.73vw'
-  ele.style.top = '19.0vw'
+  ele.style.width = '8%'
+  ele.style.right = '2%'
+  ele.style.top = '41%'
 
   if (index >= images.length - 1) {
     index = -1
@@ -151,9 +151,9 @@ function next(ele) {
 }
 
 function previous(ele) {
-  ele.style.width = '6.94vw'
-  ele.style.left = '1.73vw'
-  ele.style.top = '19.0vw'
+  ele.style.width = '8%'
+  ele.style.left = '2%'
+  ele.style.top = '41%'
 
   if (index <= 0) {
     index = images.length
@@ -164,8 +164,8 @@ function previous(ele) {
 }
 
 function size(ele) {
-  ele.style.width = '9.02vw'
-  ele.style.top = '18.0vw'
+  ele.style.width = '10%'
+  ele.style.top = '40%'
   ele.style.left = ''
   ele.style.right = ''
 
