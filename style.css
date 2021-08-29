@@ -79,7 +79,20 @@ header p {
   height: fit-content;
 }
 
-#example iframe, #example img {
+#example iframe {
+  width: 72.9vw;
+  height: 52vw;
+  transform: scale(0.8);
+  margin: auto;
+  margin-top: -6.09vh;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 0.69vw;
+}
+
+#example img {
   width: 72.9vw;
   height: 52vw;
   transform: scale(0.8);
@@ -152,6 +165,8 @@ header p {
   margin-right: auto;
   margin-bottom: 3.65vh;
   background-size: cover;
+  min-width: 80px;
+  min-height: 60px;
 }
 
 .project:hover {

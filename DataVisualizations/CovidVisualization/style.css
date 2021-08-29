@@ -1,22 +1,22 @@
 #category {
-  min-width: 288px;
+  min-width: 20vw;
   width: min-content;
-  margin-top: 30px;
+  margin-top: 2.08vw;
 }
 
 #country {
-  min-width: 350px;
+  min-width: 24.3vw;
   width: min-content;
 }
 
 #container {
-  margin-left: 50px;
+  margin-left: 3.47vw;
 }
 
 #content {
-  margin-left: -30px;
+  margin-left: -2.08vw;
 }
 
 #tooltip {
-  margin-top: 20px;
+  margin-top: 1.38vw;
 }
