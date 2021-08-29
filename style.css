@@ -165,8 +165,6 @@ header p {
   margin-right: auto;
   margin-bottom: 3.65vh;
   background-size: cover;
-  min-width: 80px;
-  min-height: 60px;
 }
 
 .project:hover {
@@ -287,4 +285,18 @@ footer {
 
 .icon:hover {
   cursor: pointer;
+}
+
+@media (max-width: 499px) {
+  .project {
+    min-width: 200px;
+    min-height: 150px;
+  }
+}
+
+@media (min-width: 500px) {
+  .project {
+    min-width: 400px;
+    min-height: 300px;
+  }
 }
