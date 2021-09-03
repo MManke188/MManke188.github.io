@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="content">
+    <div class="border">
+      <div id="menu">
+        <div id="difficulty">
+          <div class="selection">
+            <label for="easy">Easy</label>
+            <input type="radio" id="easy" value="easy" name="difficulty" onchange="generateBoard(this.value)"></input>
+          </div>
+          <div class="selection">
+            <label for="medium">Medium</label>
+            <input type="radio" id="medium" value="medium" name="difficulty"
+              onchange="generateBoard(this.value)"></input>
+          </div>
+          <div class="selection">
+            <label for="hard">Hard</label>
+            <input type="radio" id="hard" value="hard" name="difficulty" checked
+              onchange="generateBoard(this.value)"></input>
+          </div>
+        </div>
+        <button id="newGame" onclick="generateBoard()"><img src="Images/smile.png" id="smiley"></button>
+        <select id="languages" onchange="languageChange(this.value)">
+          <option value="ENG">🇺🇸</option>
+          <option value="RUS">🇷🇺</option>
+          <option value="GER">🇩🇪</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="border">
+      <div id="field">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" async await></script>
+</body>
+
+</html>

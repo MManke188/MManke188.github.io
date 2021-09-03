@@ -1,7 +1,7 @@
 #pomodoro {
   display: flex;
   justify-content: center;
-  background: rgb(255,165,100,1);
+  background: rgb(255, 165, 100, 1);
   color: black;
   border: solid black 3px;
   border-radius: 3px;
@@ -71,6 +71,110 @@
 }
 
 .body {
-  background: rgb(255,102,0, 0.8);
+  background: rgb(255, 102, 0, 0.8);
 }
 
+@media (max-width: 6000px) {
+  body {
+    transform: scale(3);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 5000px) {
+  body {
+    transform: scale(2.5);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 4000px) {
+  body {
+    transform: scale(2);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 3000px) {
+  body {
+    transform: scale(1.8);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 2300px) {
+  body {
+    transform: scale(1.6);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 2000px) {
+  body {
+    transform: scale(1.4);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 1840px) {
+  body {
+    transform: scale(1.2);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 1440px) {
+  body {
+    transform: scale(1);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 1152px) {
+  body {
+    transform: scale(0.8);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 864px) {
+  body {
+    transform: scale(0.7);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 715px) {
+  body {
+    transform: scale(0.6);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 615px) {
+  body {
+    transform: scale(0.5);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 515px) {
+  body {
+    transform: scale(0.4);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 415px) {
+  body {
+    transform: scale(0.3);
+    transform-origin: top;
+  }
+}
+
+@media (max-width: 315px) {
+  body {
+    transform: scale(0.2);
+    transform-origin: top;
+  }
+}

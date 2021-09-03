@@ -24,6 +24,7 @@ const freeCodeCamp = 'https://www.freecodecamp.org/mmanke'
 const replit = 'https://replit.com/@BattleKingCoder'
 const lebenslauf = 'Images/CV_img.png'
 const freecell = 'FreeCell/FreeCell.html'
+const minesweeper = 'Minesweeper/index.html'
 
 
 function projectRedirect(event) {
@@ -94,6 +95,9 @@ function projectRedirect(event) {
     case 'freecell':
       window.open(freecell, '_blank')
       break;
+    case 'minesweeper':
+      window.open(minesweeper, '_blank')
+      break;
   }
 }
 
@@ -132,7 +136,8 @@ const images = [
   '<img src=' + messageboard + ' id="messageboard" style="opacity: 0""></img>',
   '<iframe src=' + game_ratings + ' id="game-ratings" style="opacity: 0""></iframe>',
   '<iframe src=' + pomodoro_clock + ' id="pomodoro" style="opacity: 0""></iframe>',
-  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0""></iframe>'
+  '<iframe src=' + brick_destroyer + ' id="brick-destroyer" style="opacity: 0""></iframe>',
+  '<iframe src=' + freecell + ' id="freecell" style="opacity: 0"</iframe>'
 ]
 
 let index = 0

@@ -1,0 +1,73 @@
+#field {
+  border-top: 0.27vw solid grey;
+  border-left: 0.27vw solid grey;
+  border-right: 0.27vw solid whitesmoke;
+  border-bottom: 0.27vw solid whitesmoke;
+  position: relative;
+}
+
+.tile {
+  position: absolute;
+  cursor: 'default';
+  border: none;
+}
+
+.tile img {
+  position: absolute;
+  margin-left: -1vw;
+  margin-top: -1vw;
+}
+
+.tile:hover {
+  cursor: pointer;
+}
+
+.unopened {
+  background-image: url('Images/unopened.png');
+  background-size: cover;
+}
+
+#newGame img {
+  width: 2.77vw;
+  height: 2.77vw;
+}
+
+#newGame {
+  width: fit-content;
+  height: fit-content;
+}
+
+#menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4vw;
+}
+
+#difficulty {
+  display: flex;
+  flex-direction: column;
+}
+
+.selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+#content {
+  height: fit-content;
+  width: fit-content;
+  border-top: 3px solid grey;
+  border-left: 3px solid grey;
+  border-right: 3px solid whitesmoke;
+  border-bottom: 3px solid whitesmoke;
+  margin: 3.47vw;
+}
+
+.border {
+  border: 2vw solid silver;
+}
+
+#languages {
+  font-size: 2em;
+}

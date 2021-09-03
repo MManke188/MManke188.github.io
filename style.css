@@ -79,6 +79,7 @@ header p {
   -ms-transform-origin: 0 0;
   transform-origin: 0 0;
   height: fit-content;
+  overflow: hidden;
 }
 
 #example iframe {
@@ -86,7 +87,6 @@ header p {
   height: 52vw;
   transform: scale(0.8);
   margin: auto;
-  margin-top: -6.09vh;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
@@ -99,7 +99,6 @@ header p {
   height: 52vw;
   transform: scale(0.8);
   margin: auto;
-  margin-top: -6.09vh;
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;
   -o-transition: opacity 0.2s ease-in-out;
@@ -148,7 +147,7 @@ header p {
 
 #projects p {
   color: rgb(255, 255, 255);
-  font-size: 2vw;
+  font-size: 3.50vh;
 }
 
 #list {
@@ -267,7 +266,7 @@ footer {
 
 #icons label {
   color: white;
-  font-size: 1.94vh;
+  font-size: 2vh;
 }
 
 #icons div {
@@ -333,5 +332,11 @@ footer {
   .project {
     min-width: 400px;
     min-height: 300px;
+  }
+}
+
+@media (orientation:landscape) {
+  #icons label {
+    font-size: 2vw;
   }
 }
