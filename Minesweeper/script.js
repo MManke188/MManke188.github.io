@@ -245,7 +245,7 @@ function languageChange(lang) {
         } else if (i == 1) {
           label.innerHTML = "Средний"
         } else {
-          label.innerHTML = "Тяжелый"
+          label.innerHTML = "Сложный"
         }
       })
       break;
