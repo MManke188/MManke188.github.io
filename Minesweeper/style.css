@@ -61,7 +61,7 @@
   border-left: 3px solid grey;
   border-right: 3px solid whitesmoke;
   border-bottom: 3px solid whitesmoke;
-  margin: 3.47vw;
+  margin-left: 3.47vw;
 }
 
 .border {
@@ -70,4 +70,11 @@
 
 #languages {
   font-size: 2em;
+}
+
+#timer {
+  text-align: center;
+  font-size: 3vw;
+  font-family: 'Chakra Petch';
+  background-color: silver;
 }

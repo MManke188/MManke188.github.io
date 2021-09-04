@@ -7,6 +7,7 @@ const difficulties = {
 let difficulty = 'hard'
 const field = document.getElementById('field')
 const menu = document.getElementById('menu')
+const timer = document.getElementById('timer')
 
 field.addEventListener('mousedown', exitedSmile)
 field.addEventListener('mouseup', delayedSmile)
@@ -25,9 +26,12 @@ function delayedSmile() {
 
 let board
 let firstClick
+let timerFunc
 
 function generateBoard(update) {
   smile()
+  timer.innerHTML = '000'
+  clearInterval(timerFunc)
   firstClick = true
   difficulty = update || difficulty
   let tile = {}
@@ -54,6 +58,7 @@ function setUpMenu() {
 }
 
 function fillBoard(difficulty, ele) {
+  timerFunc = setInterval(timerStart, 1000)
   Array.from(document.getElementsByClassName('tile')).forEach((tile) => {
     tile.addEventListener('contextmenu', flag)
   })
@@ -78,6 +83,16 @@ function fillBoard(difficulty, ele) {
   }
 
   return board
+}
+
+function timerStart(restart = false) {
+  let newTime = Number(timer.innerHTML)
+  newTime++
+  newTime = String(newTime)
+  while (newTime.length < 3) {
+    newTime = '0' + newTime
+  }
+  timer.innerHTML = newTime
 }
 
 
@@ -175,6 +190,7 @@ function unflag(ele) {
 }
 
 function gameLost(click) {
+  clearInterval(timerFunc)
   setTimeout(() => {
     document.getElementById('newGame').innerHTML = '<img src="Images/lost.png" id="smiley">'
   }, 100)
@@ -198,6 +214,7 @@ function gameLost(click) {
 }
 
 function gameWon() {
+  clearInterval(timerFunc)
   setTimeout(() => {
     document.getElementById('newGame').innerHTML = '<img src="Images/victory.png" id="smiley">'
   }, 100)

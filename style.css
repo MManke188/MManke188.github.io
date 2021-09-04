@@ -166,6 +166,7 @@ header p {
   margin-right: auto;
   margin-bottom: 3.65vh;
   background-size: cover;
+  overflow: hidden;
 }
 
 .project:hover {
