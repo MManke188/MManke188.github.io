@@ -11,6 +11,7 @@ const timer = document.getElementById('timer')
 
 field.addEventListener('mousedown', exitedSmile)
 field.addEventListener('mouseup', delayedSmile)
+field.addEventListener('mouseleave', smile)
 
 function exitedSmile() {
   document.getElementById('newGame').innerHTML = '<img src="Images/shock.png" id="smiley">'
