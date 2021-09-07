@@ -61,6 +61,7 @@
   border-left: 3px solid grey;
   border-right: 3px solid whitesmoke;
   border-bottom: 3px solid whitesmoke;
+  background-color: silver;
   margin-left: 3.47vw;
 }
 
@@ -72,9 +73,17 @@
   font-size: 2em;
 }
 
-#timer {
+#timer, #mines {
   text-align: center;
   font-size: 3vw;
   font-family: 'Chakra Petch';
+  background-color: silver;
+}
+
+#display {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 3vw;
+  margin-right: 3vw;
   background-color: silver;
 }
