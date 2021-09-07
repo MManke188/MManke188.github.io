@@ -79,8 +79,19 @@ function setUpMenu() {
 
 function fillBoard(difficulty, ele) {
   timerFunc = setInterval(timerStart, 1000);
+  var pressTimer;
   Array.from(document.getElementsByClassName("tile")).forEach((tile) => {
     tile.addEventListener("contextmenu", flag);
+    tile.addEventListener("mouseup", function () {
+      clearTimeout(pressTimer);
+      // Clear timeout
+      return false;
+    });
+    tile.addEventListener("mousedown", function () {
+      // Set timeout
+      pressTimer = window.setTimeout(() => flag(tile), 1000);
+      return false;
+    });
   });
 
   board = [];
@@ -192,9 +203,14 @@ function getValue(tile) {
   return value;
 }
 
-function flag() {
-  window.event.preventDefault();
-  let ele = window.event.srcElement;
+function flag(tile) {
+  let ele;
+  if (window.event !== undefined) {
+    window.event.preventDefault();
+    ele = window.event.srcElement;
+  } else {
+    ele = tile;
+  }
   if (ele.classList.contains("flagged")) {
     unflag(ele);
   } else {
