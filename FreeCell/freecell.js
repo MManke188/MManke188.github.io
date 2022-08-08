@@ -9,7 +9,6 @@ function generate() {
   // Shuffle the cards
   let shuffled = shuffle(cards)
 
-  // Generate the board array
   board = []
   for (let i = 0; i < 28; i += 7) {
     board.push(shuffled.slice(i, i + 7))
