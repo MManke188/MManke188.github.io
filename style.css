@@ -1,7 +1,5 @@
 body {
   background-color: rgb(41, 41, 41);
-  ;
-  background-image: url("Images/red\ grey\ corners.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -26,7 +24,7 @@ header p {
 }
 
 #cv {
-  border: 0.20vw solid black;
+  border: 0.2vw solid black;
   margin: 0.34vw;
   padding: 0.34vw;
   display: grid;
@@ -62,7 +60,7 @@ header p {
 
 #preview {
   position: relative;
-  border: 0.20vw solid rgb(0, 0, 200);
+  border: 0.2vw solid rgb(0, 0, 200);
   background-color: rgba(169, 169, 169, 0.6);
   margin: 1.38vw 18.2vh 1.38vw 18.2vh;
   padding: 0.34vw;
@@ -143,11 +141,12 @@ header p {
   margin: 2.43vw;
   padding: 0.69vw;
   text-align: center;
+  border-radius: 2vw;
 }
 
 #projects p {
   color: rgb(255, 255, 255);
-  font-size: 3.50vh;
+  font-size: 3.5vh;
 }
 
 #list {
@@ -200,7 +199,7 @@ header p {
   color: #000;
   width: 12.5vw;
   height: 2.08vw;
-  font-size: 0.90vw;
+  font-size: 0.9vw;
   margin-top: auto;
 }
 
@@ -211,7 +210,7 @@ header p {
 
 #redirect {
   margin-left: 34.7vw;
-  font-size: 0.90vw;
+  font-size: 0.9vw;
   width: 12vw;
   height: 2vw;
 }
@@ -336,7 +335,7 @@ footer {
   }
 }
 
-@media (orientation:landscape) {
+@media (orientation: landscape) {
   #icons label {
     font-size: 2vw;
   }
