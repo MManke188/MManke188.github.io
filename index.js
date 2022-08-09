@@ -26,7 +26,7 @@ const replit = 'https://replit.com/@BattleKingCoder';
 const lebenslauf = 'Images/CV_img.png';
 const freecell = 'FreeCell/FreeCell.html';
 const minesweeper = 'Minesweeper/index.html';
-const shopping_list = 'ShoppingList/dist/index.html';
+const shopping_list = 'ShoppingList/index.html';
 
 function projectRedirect(event) {
   let project;
@@ -35,7 +35,6 @@ function projectRedirect(event) {
   } else {
     project = event.id;
   }
-  console.log(project);
   switch (project) {
     case 'brick-destroyer':
       window.open(brick_destroyer, '_blank');
@@ -141,21 +140,21 @@ function handleKeyPress(event) {
 }
 
 const images = [
+  '<iframe src=' +
+    shopping_list +
+    ' id="shopping_list" style="opacity: 0"</iframe>',
   '<iframe src=' + covid + ' id="line-chart" style="opacity: 0""></iframe>',
-  '<img src=' + messageboard + ' id="messageboard" style="opacity: 0""></img>',
+  '<iframe src=' +
+    brick_destroyer +
+    ' id="brick-destroyer" style="opacity: 0""></iframe>',
+  '<iframe src=' + freecell + ' id="freecell" style="opacity: 0"</iframe>',
+  '<iframe src="https://anonymous-messageboard.battlekingcoder.repl.co/" id="messageboard" style="opacity: 0""></iframe>',
   '<iframe src=' +
     game_ratings +
     ' id="game-ratings" style="opacity: 0""></iframe>',
   '<iframe src=' +
     pomodoro_clock +
     ' id="pomodoro" style="opacity: 0""></iframe>',
-  '<iframe src=' +
-    brick_destroyer +
-    ' id="brick-destroyer" style="opacity: 0""></iframe>',
-  '<iframe src=' + freecell + ' id="freecell" style="opacity: 0"</iframe>',
-  '<iframe src=' +
-    shopping_list +
-    ' id="shopping_list" style="opacity: 0"</iframe>',
 ];
 
 let index = 0;
@@ -169,8 +168,7 @@ function next(ele) {
   }
 
   index++;
-
-  document.querySelector('#example').childNodes[0].style.opacity = 0;
+  document.querySelector('#example iframe').style.opacity = 0;
 }
 
 function previous(ele) {
