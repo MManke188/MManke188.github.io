@@ -5,7 +5,6 @@ for (let project of projects) {
 }
 
 const covid = 'DataVisualizations/CovidVisualization/index.html';
-const messageboard = 'Images/messageboard.png';
 const game_ratings = 'DataVisualizations/GameRatings/Q5/choropleth.html';
 const pomodoro_clock = 'PomodoroClock/index.html';
 const brick_destroyer = 'BrickDestroyer/index.html';
@@ -148,7 +147,6 @@ const images = [
     brick_destroyer +
     ' id="brick-destroyer" style="opacity: 0""></iframe>',
   '<iframe src=' + freecell + ' id="freecell" style="opacity: 0"</iframe>',
-  '<iframe src="https://anonymous-messageboard.battlekingcoder.repl.co/" id="messageboard" style="opacity: 0""></iframe>',
   '<iframe src=' +
     game_ratings +
     ' id="game-ratings" style="opacity: 0""></iframe>',
