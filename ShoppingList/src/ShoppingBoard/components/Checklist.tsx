@@ -1,11 +1,11 @@
 import { Component, createSignal, For } from 'solid-js';
-import { ChecklistItem } from './List';
 import styles from '../../App.module.css';
 import editIcon from '../../assets/editIcon.svg';
 import trashCan from '../../assets/trashCan.png';
+import { store } from '../../helper/listFunctions';
 
 export const Checklist: Component<ChecklistProps> = ({
-  items,
+  listIndex,
   addItem,
   itemIndex,
   toggleItem,
@@ -13,7 +13,7 @@ export const Checklist: Component<ChecklistProps> = ({
 }) => {
   return (
     <ul class={styles.checkList}>
-      <For each={items}>
+      <For each={store.lists[listIndex].items[itemIndex].checkList}>
         {(item, i) => {
           const [shouldEdit, setShouldEdit] = createSignal(false);
           let inputRef: HTMLInputElement | undefined;
@@ -41,8 +41,8 @@ export const Checklist: Component<ChecklistProps> = ({
                   onsubmit={() => {
                     addItem(
                       itemIndex,
-                      inputRef?.value || 'A sad item without a title',
-                      i()
+                      i(),
+                      inputRef?.value || 'A sad item without a title'
                     );
                   }}
                   style={{
@@ -78,8 +78,8 @@ export const Checklist: Component<ChecklistProps> = ({
 };
 
 type ChecklistProps = {
-  items: ChecklistItem[];
-  addItem: (i: number, item: string, index: number) => void;
+  listIndex: number;
+  addItem: (i: number, index: number, item: string) => void;
   toggleItem: (i: number) => void;
   itemIndex: number;
   deleteChecklistItem: (i: number) => void;

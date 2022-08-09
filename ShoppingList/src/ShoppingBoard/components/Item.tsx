@@ -4,7 +4,7 @@ import trashCan from '../../assets/trashCan.png';
 import arrow from '../../assets/arrow.png';
 import plusIcon from '../../assets/plusIcon.png';
 import { Checklist } from './Checklist';
-import { ChecklistItem } from './List';
+import { store } from '../../helper/listFunctions';
 
 export const Item: Component<ItemProps> = (props) => {
   let inputRef: HTMLInputElement | undefined;
@@ -34,10 +34,11 @@ export const Item: Component<ItemProps> = (props) => {
               />
             </div>
           </div>
-          {props.checkList?.length && (
+          {store.lists[props.listIndex].items[props.index].checkList
+            ?.length && (
             <Checklist
-              items={props.checkList}
-              addItem={props.addChecklist}
+              addItem={props.addChecklistItem}
+              listIndex={props.listIndex}
               itemIndex={props.index}
               toggleItem={(i: number) =>
                 props.toggleChecklistItem(props.index, i)
@@ -84,8 +85,13 @@ type ItemProps = {
   addItem: (title?: string) => void;
   deleteItem: (i: number) => void;
   moveItem: (i: number) => void;
-  addChecklist: (i: number, ingredient?: string) => void;
-  checkList?: ChecklistItem[];
+  addChecklist: (i: number) => void;
+  addChecklistItem: (
+    i: number,
+    ingredientIndex: number,
+    ingredient: string
+  ) => void;
+  listIndex: number;
   toggleChecklistItem: (itemIndex: number, checkListItemIndex: number) => void;
   moveUp: (i: number) => void;
   moveDown: (i: number) => void;

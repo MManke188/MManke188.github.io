@@ -13,6 +13,10 @@
   color: white;
 }
 
+.headerText {
+  font-size: calc(2vmin);
+}
+
 #listContainer {
   display: flex;
   flex-direction: row;

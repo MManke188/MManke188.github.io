@@ -8,10 +8,6 @@ import {
 } from '../../helper/listFunctions';
 import { Item } from './Item';
 
-/* setStore('lists', 1, (prev) => {
-  return { ...prev, items: [] };
-}); */
-
 export const List: Component<{ index: number }> = ({ index }) => {
   let inputRef: HTMLInputElement | undefined;
 
@@ -35,76 +31,72 @@ export const List: Component<{ index: number }> = ({ index }) => {
   };
 
   const moveItem = (i: number) => {
-    if (index < store.lists.length - 1) {
-      if (store.lists[index + 1].title) {
-        setStore('lists', index + 1, 'items', (prev) => {
-          const itemsToAdd = [...[store.lists[index].items[i]]];
-          if (store.lists[index].items[i].checkList?.length) {
-            const checklistToAdd = store.lists[index].items[i].checkList
-              ?.filter(({ checked }) => !checked)
-              .map(({ title }) => ({ title, checkList: [] }));
-            itemsToAdd.push(...checklistToAdd!);
-          }
+    if (index === 0) {
+      setStore('lists', index + 1, 'items', (prev) => {
+        const itemsToAdd = [];
+        if (store.lists[index].items[i].checkList?.length) {
+          const checklistToAdd = store.lists[index].items[i].checkList
+            ?.filter(({ checked }) => !checked)
+            .map(({ title }) => ({ title, checkList: [] }));
+          itemsToAdd.push(...checklistToAdd!);
+        } else {
+          itemsToAdd.push(store.lists[index].items[i]);
+        }
 
-          const countedItems: Item[] = [];
+        const countedItems: Item[] = [];
 
-          itemsToAdd.forEach((item) => {
-            const title = titleSlicer(item.title);
-            const index = countedItems.findIndex(
-              (i) => titleSlicer(i.title) === title
-            );
+        itemsToAdd.forEach((item) => {
+          const title = titleSlicer(item.title);
+          const index = countedItems.findIndex(
+            (i) => titleSlicer(i.title) === title
+          );
 
-            if (index !== -1) {
-              const amount = amountSlicer(item.title);
-              const updatedAmount =
-                amountSlicer(countedItems[index].title) + amount;
-              countedItems[index].title = `${title} (${updatedAmount})`;
-            } else {
-              countedItems.push({
-                title: item.title,
-                checkList: item.checkList,
-              });
-            }
-          });
-
-          prev.forEach((item) => {
-            const title = titleSlicer(item.title);
-            const index = countedItems.findIndex(
-              (i) => titleSlicer(i.title) === title
-            );
-
-            if (index !== -1) {
-              const amount = amountSlicer(item.title);
-              const updatedAmount =
-                amountSlicer(countedItems[index].title) + amount;
-              countedItems[index].title = `${title} (${updatedAmount})`;
-            } else {
-              countedItems.push(item);
-            }
-          });
-
-          if (index === 0) {
-            // sort counted items by their index in the item order
-
-            //append new items to the itemOrder
-            countedItems.forEach((item) => {
-              const title = titleSlicer(item.title);
-              if (!itemOrder.includes(title)) {
-                setItemOrder((prev) => [title, ...prev]);
-              }
-            });
-
-            countedItems.sort((a, b) => {
-              const aIndex = itemOrder.indexOf(titleSlicer(a.title));
-              const bIndex = itemOrder.indexOf(titleSlicer(b.title));
-
-              return aIndex - bIndex;
+          if (index !== -1) {
+            const amount = amountSlicer(item.title);
+            const updatedAmount =
+              amountSlicer(countedItems[index].title) + amount;
+            countedItems[index].title = `${title} (${updatedAmount})`;
+          } else {
+            countedItems.push({
+              title: item.title,
+              checkList: item.checkList,
             });
           }
-
-          return countedItems;
         });
-      }
+
+        prev.forEach((item) => {
+          const title = titleSlicer(item.title);
+          const index = countedItems.findIndex(
+            (i) => titleSlicer(i.title) === title
+          );
+
+          if (index !== -1) {
+            const amount = amountSlicer(item.title);
+            const updatedAmount =
+              amountSlicer(countedItems[index].title) + amount;
+            countedItems[index].title = `${title} (${updatedAmount})`;
+          } else {
+            countedItems.push(item);
+          }
+        });
+
+        //append new items to the itemOrder
+        countedItems.forEach((item) => {
+          const title = titleSlicer(item.title);
+          if (!itemOrder.includes(title)) {
+            setItemOrder((prev) => [title, ...prev]);
+          }
+        });
+
+        countedItems.sort((a, b) => {
+          const aIndex = itemOrder.indexOf(titleSlicer(a.title));
+          const bIndex = itemOrder.indexOf(titleSlicer(b.title));
+
+          return aIndex - bIndex;
+        });
+
+        return countedItems;
+      });
     } else {
       // add item to the very first list
       setStore('lists', 0, (prev) => ({
@@ -116,7 +108,7 @@ export const List: Component<{ index: number }> = ({ index }) => {
         ],
       }));
     }
-    deleteItem(i);
+    !store.lists[index].items[i].checkList && deleteItem(i);
   };
 
   const addTitle = (title: string) => {
@@ -126,30 +118,21 @@ export const List: Component<{ index: number }> = ({ index }) => {
     }));
   };
 
-  const addChecklist = (
+  const addChecklist = (i: number) => {
+    setStore('lists', index, 'items', [i], 'checkList', (prev) =>
+      prev ? [...prev, { title: '', checked: false }] : []
+    );
+  };
+
+  const addChecklistItem = (
     i: number,
-    ingredient?: string,
-    ingredientIndex?: number
+    ingredientIndex: number,
+    ingredient: string
   ) => {
-    setStore('lists', index, 'items', (prev) => [
-      ...prev.slice(0, i),
-      {
-        title: prev[i].title,
-        checkList:
-          ingredientIndex !== undefined
-            ? [
-                ...prev[i].checkList!.slice(0, ingredientIndex),
-                { title: ingredient || '', checked: false },
-                ...prev[i].checkList!.slice(ingredientIndex + 1),
-              ]
-            : prev[i].checkList
-            ? [
-                ...prev[i].checkList!,
-                { title: ingredient || '', checked: false },
-              ]
-            : [{ title: ingredient || '', checked: false }],
-      },
-      ...prev.slice(i + 1),
+    setStore('lists', index, 'items', [i], 'checkList', (prev) => [
+      ...prev!.slice(0, ingredientIndex),
+      { title: ingredient, checked: false },
+      ...prev!.slice(ingredientIndex + 1),
     ]);
   };
 
@@ -268,7 +251,8 @@ export const List: Component<{ index: number }> = ({ index }) => {
                     deleteItem,
                     moveItem,
                     addChecklist,
-                    checkList: item?.checkList,
+                    addChecklistItem,
+                    listIndex: index,
                     toggleChecklistItem,
                     moveUp,
                     moveDown,
@@ -323,5 +307,3 @@ const amountSlicer = (title: string) => {
     ? Number(title.slice(title.indexOf('(') + 1, title.indexOf(')')))
     : 1;
 };
-
-// setItemOrder([...store.lists[1].items.map((e) => titleSlicer(e.title))]);
