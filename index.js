@@ -26,7 +26,7 @@ const replit = 'https://replit.com/@BattleKingCoder';
 const lebenslauf = 'Images/CV_img.png';
 const freecell = 'FreeCell/FreeCell.html';
 const minesweeper = 'Minesweeper/index.html';
-const shopping_list = 'ShoppingList/index.html';
+const shopping_list = 'ShoppingList/dist/index.html';
 
 function projectRedirect(event) {
   let project;
