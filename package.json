@@ -1,0 +1,12 @@
+{
+  "name": "MManke188.github.io",
+  "version": "1.0.0",
+  "description": "My Personal Website with all of my projects",
+  "main": "index.js",
+  "repository": "https://github.com/MManke188/MManke188.github.io.git",
+  "author": "Michael Manke <michaelmanke00@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "tailwindcss": "^3.1.8"
+  }
+}

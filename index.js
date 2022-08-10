@@ -4,28 +4,29 @@ for (let project of projects) {
   project.addEventListener('click', projectRedirect);
 }
 
-const covid = 'DataVisualizations/CovidVisualization/index.html';
-const game_ratings = 'DataVisualizations/GameRatings/Q5/choropleth.html';
-const pomodoro_clock = 'PomodoroClock/index.html';
-const brick_destroyer = 'BrickDestroyer/index.html';
+const covid = 'src/DataVisualizations/CovidVisualization/index.html';
+const game_ratings = 'src/DataVisualizations/GameRatings/Q5/choropleth.html';
+const pomodoro_clock = 'src/PomodoroClock/index.html';
+const brick_destroyer = 'src/BrickDestroyer/index.html';
 const chatroom = 'https://Chatroom.battlekingcoder.repl.co';
-const american_education = 'DataVisualizations/AmericanEducation/index.html';
+const american_education =
+  'src/DataVisualizations/AmericanEducation/index.html';
 const library = 'https://Personal-Library.battlekingcoder.repl.co';
 const stockprice_checker = 'https://Stockprice-Checker.battlekingcoder.repl.co';
 const sudoku_solver = 'https://Sudoku-Solver.battlekingcoder.repl.co';
-const treemap = 'DataVisualizations/TrashDisposal/treemap.html';
-const tooth = 'DataVisualizations/volume-rendering/index.html';
+const treemap = 'src/DataVisualizations/TrashDisposal/treemap.html';
+const tooth = 'src/DataVisualizations/volume-rendering/index.html';
 const vector_visualization =
-  'DataVisualizations/vector-visualization/index.html';
+  'src/DataVisualizations/vector-visualization/index.html';
 const github = 'https://github.com/MManke188';
 const fiverr = 'https://www.fiverr.com/m_manke';
 const mail = 'mailto:michaelmanke00@gmail.com';
 const freeCodeCamp = 'https://www.freecodecamp.org/mmanke';
 const replit = 'https://replit.com/@BattleKingCoder';
 const lebenslauf = 'Images/CV_img.png';
-const freecell = 'FreeCell/FreeCell.html';
-const minesweeper = 'Minesweeper/index.html';
-const shopping_list = 'ShoppingList/index.html';
+const freecell = 'src/FreeCell/FreeCell.html';
+const minesweeper = 'src/Minesweeper/index.html';
+const shopping_list = 'src/ShoppingList/index.html';
 
 function projectRedirect(event) {
   let project;
